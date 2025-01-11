@@ -1,0 +1,68 @@
+/* General font styles */
+p, li {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+/* Both header titles*/
+.header-titles{
+    text-align: center;
+    letter-spacing: 3.5px;
+    line-height: 1.5;
+}
+
+/* Top title */
+h1 {
+    margin-top: 50px;
+    margin-bottom: 0;
+    font-weight: 600;
+}
+
+/* Lower, blue title */
+h2 {
+    color: #006EB6;
+    border-bottom: rgba(222, 217, 217, 0.835) 1px solid;
+    margin-bottom: 50px;
+    font-size: 14px;
+}
+
+.list-heading{
+    font-style: italic;
+}
+
+body {
+    max-width: fit-content;
+    display: block;
+    margin: 0 auto;
+    font-family: 'Times New Roman', serif;
+}
+
+/* Content class to add margin outside border */
+.content {
+    border: rgba(0, 0, 0, 0.224) 1px solid;
+    height: 100%;
+    padding-left: 135px;
+    padding-right: 135px;
+    margin: 35px;
+}
+
+/* Elements inside content */
+.content *{
+    max-width: 600px;
+}
+
+/* List items */
+li {
+    margin-bottom: 20px;
+}
+
+
+.logo{
+    width: 25%;
+    height: 25%;
+    display: block;
+    margin: 0 auto;
+    margin-top: 3.8rem;
+    margin-bottom: 60px;
+}
