@@ -5,29 +5,30 @@ p, li {
     line-height: 1.5;
 }
 
-/* Both header titles*/
-.header-titles{
+/* Header styles */
+.site-header {
     text-align: center;
     letter-spacing: 3.5px;
     line-height: 1.5;
 }
 
-/* Top title */
-h1 {
+/* Main title */
+.main-title {
     margin-top: 50px;
     margin-bottom: 0;
     font-weight: 600;
 }
 
-/* Lower, blue title */
-h2 {
+/* Subtitle */
+.sub-title {
     color: #006EB6;
     border-bottom: rgba(222, 217, 217, 0.835) 1px solid;
     margin-bottom: 50px;
     font-size: 14px;
 }
 
-.list-heading{
+/* Italicized list heading */
+.list-heading {
     font-style: italic;
 }
 
@@ -38,8 +39,8 @@ body {
     font-family: 'Times New Roman', serif;
 }
 
-/* Content class to add margin outside border */
-.content {
+/* Content container with padding and border */
+.page-content {
     border: rgba(0, 0, 0, 0.224) 1px solid;
     height: 100%;
     padding-left: 135px;
@@ -48,17 +49,17 @@ body {
 }
 
 /* Elements inside content */
-.content *{
+.page-content * {
     max-width: 600px;
 }
 
 /* List items */
-li {
+.mission-list li {
     margin-bottom: 20px;
 }
 
-
-.logo{
+/* Logo styling */
+.logo {
     width: 25%;
     height: 25%;
     display: block;
@@ -67,7 +68,8 @@ li {
     margin-bottom: 60px;
 }
 
-#theme-select {
+/* Theme selector */
+.theme-selector {
     position: absolute;
     top: 0;
     left: 0;
@@ -79,6 +81,6 @@ li {
     color: white;
 }
 
-.dark h2 {
+.dark .sub-title {
     color: #A0D4ED;
 }
