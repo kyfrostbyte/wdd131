@@ -1,40 +1,63 @@
 /* General body styles */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4; 
-    color: #333; 
+    background-color: #f4f4f4;
+    color: #333;
     margin: 0;
     padding: 0;
 }
 
-
 header {
-    background-color: #006EB6; 
+    background-color: #006EB6;
     color: white;
     padding: 20px;
     text-align: center;
 }
 
-
 main {
+    display: block;
     padding: 20px;
     text-align: center;
 }
 
+ul {
+    list-style-type: none; /* Remove default bullets */
+    padding: 0;
+}
+
+li {
+    background-color: #e6f2ff; /* Light blue background */
+    border: 2px solid #006EB6; /* Blue border */
+    border-radius: 8px; /* Rounded corners */
+    margin: 10px auto; /* Space between list items */
+    padding: 10px 20px; /* Padding for better readability */
+    width: fit-content; /* Adjust width based on content */
+    text-align: center; /* Center align text */
+    transition: transform 0.3s, background-color 0.3s; /* Add smooth hover effects */
+}
+
+li:hover {
+    background-color: #006EB6; /* Darker blue on hover */
+    color: white; /* Text turns white on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+}
 
 a {
-    color: #006EB6; 
+    color: #006EB6;
     text-decoration: none;
     font-size: 18px;
 }
 
-a:hover {
-    text-decoration: underline; 
+li:hover a {
+    color: white; /* Links inherit white color on hover */
 }
 
+a:hover {
+    text-decoration: underline;
+}
 
 footer {
-    background-color: #333; 
+    background-color: #333;
     color: white;
     padding: 10px;
     text-align: center;
