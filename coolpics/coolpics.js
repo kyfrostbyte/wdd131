@@ -29,13 +29,19 @@ gallery.addEventListener('click', viewHandler);
 
 function viewHandler(event) {
     const element = event.target;
+
+    // Make sure the clicked element was an image, otherwise errors will happen
     if (element.tagName === "IMG"){
+
+        // Parse the beginning part of the current image src, then append the proper suffix
         const srcParts = element.src.split('-');
         const largerImageSrc = srcParts[0] + '-full.jpeg';
+
+        // Open up the viewer
         document.body.insertAdjacentHTML('afterbegin', viewerTemplate(largerImageSrc, 'A larger version of the pretty nature picture.'))
     
+        // Listen for user clicking the exit button and exit if they do
         const closeViewerButton = document.querySelector('.close-viewer')
-    
         closeViewerButton.addEventListener('click', closeViewer);
     }
 }

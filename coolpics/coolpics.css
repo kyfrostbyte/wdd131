@@ -44,14 +44,13 @@ ul{
     margin-bottom: 1rem;
 }
 
-
-figure {
-    margin: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+footer{
+    background-color: rgb(108, 206, 255);
+    text-align: center;
+    padding: 1rem;
 }
 
+/* Menu Styles */
 .menu-button{
     all: unset; 
     font-size: 2em;
@@ -84,12 +83,7 @@ figure {
     margin-bottom: .5rem;
 }
 
-footer{
-    background-color: rgb(108, 206, 255);
-    text-align: center;
-    padding: 1rem;
-}
-
+/* Gallery Styles */
 .gallery img{
     margin: 1.5em;
     border: 10px solid white;
@@ -100,6 +94,14 @@ footer{
     box-shadow: 3px 3px 8px rgba(0, 0, 0, 1);
 }
 
+figure {
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Viewer Styles */
 .viewer {
     position: fixed;
     top: 0;
@@ -125,12 +127,11 @@ footer{
     align-self: end;
     justify-self: end;
 }
+
 .viewer img{
     max-height: 100%;
     max-width: 100%;
 }
-
-
 
 /* Medium screens: 700px to 1000px */
 @media (min-width: 700px){
@@ -149,6 +150,7 @@ footer{
       gap: 1rem;
     }
 
+    /* Hide menu toggle button and display nav items inline */
     .menu-button{
         display: none;
     }
@@ -162,7 +164,7 @@ footer{
         margin: 0 1rem;
     }
 
-    /* Ensure that the image doesnt grow to tall/wide, viewer is still always centered,  */
+    /* Ensure viewer image doesnt grow to tall/wide, viewer is still always centered, padding.margin is accurate */
     .viewer {
         width: fit-content;
         height: fit-content;
@@ -175,6 +177,7 @@ footer{
         padding: 2.5rem;
     }
 
+    /* Force image to not grow so big it goes off screen  */
     .viewer img {
         max-height: 80vh; 
     }
