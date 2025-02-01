@@ -49,11 +49,8 @@ function closeViewer() {
 function viewerTemplate(image, alt) {
     return `
         <div class="viewer">
-            <div class="viewer-content">
-                <button class="close-viewer">&times;</button>
-                <img src="${image}" alt="${alt}">
-            </div>
+            <button class="close-viewer">X</button>
+            <img src="${image}" alt="${alt}">
         </div>
-
     `;
 }

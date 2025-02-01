@@ -100,7 +100,6 @@ footer{
     box-shadow: 3px 3px 8px rgba(0, 0, 0, 1);
 }
 
-/* Viewer: Always Covers Full Screen to Detect Clicks */
 .viewer {
     position: fixed;
     top: 0;
@@ -108,45 +107,27 @@ footer{
     left: 0;
     right: 0;
     background-color: rgba(0, 0, 0, 0.75);
-    padding: 1rem;
-
-    /* Ensures it captures all clicks */
-    display: flex;
+    
+    display: grid;
+    grid-template-rows: auto auto; 
     justify-content: center;
     align-items: center;
-}
-
-/* Wrapper Inside .viewer That Shrinks to Fit Image */
-.viewer-content {
-    display: grid;
-    grid-template-rows: auto minmax(0, 1fr);
-    justify-items: center;
-    align-items: center;
-    
-    /* Ensures the container only wraps around the image */
-    max-width: fit-content;
-    max-height: calc(100% - 2rem);
-    background-color: transparent;
     padding: 2rem;
-    border-radius: 8px; /* Optional: Softer look */
+    
 }
 
-/* Close Button: Stays in Top-Right of Viewer Content */
-.close-viewer {
+.close-viewer{
     font-size: 2rem;
     background: transparent;
     border: none;
     color: white;
     cursor: pointer;
-    align-self: start;
+    align-self: end;
     justify-self: end;
 }
-
-/* Image: Prevents Overflow */
-.viewer img {
-    max-width: 100%;
+.viewer img{
     max-height: 100%;
-    object-fit: contain;
+    max-width: 100%;
 }
 
 
@@ -181,8 +162,20 @@ footer{
         margin: 0 1rem;
     }
 
-    .viewer{
-        margin: 2rem;
+    /* Ensure that the image doesnt grow to tall/wide, viewer is still always centered,  */
+    .viewer {
+        width: fit-content;
+        height: fit-content;
+        max-height: 80vh; 
+        max-width: 80vw;
+        margin:auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 2.5rem;
     }
- 
+
+    .viewer img {
+        max-height: 80vh; 
+    }
   }
