@@ -62,14 +62,14 @@ figure {
 }
 
 .menu-items{
-    display: none;
+    display: block;
     list-style-type: none;
     text-align: center;
     font-size: 1.5em;
 }
 
-.menu-items.show{
-    display: block;
+.hide{
+    display: none;
 }
 
 .menu-items a{
@@ -79,7 +79,6 @@ figure {
 .menu-items a:hover, .menu-button:hover{
     color: var(--accent-color)
 }
-
 
 .menu-items li{
     margin-bottom: .5rem;
@@ -91,7 +90,7 @@ footer{
     padding: 1rem;
 }
 
-img{
+.gallery img{
     margin: 1.5em;
     border: 10px solid white;
     max-width: 100%;
@@ -100,6 +99,57 @@ img{
     object-fit: cover;
     box-shadow: 3px 3px 8px rgba(0, 0, 0, 1);
 }
+
+/* Viewer: Always Covers Full Screen to Detect Clicks */
+.viewer {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    padding: 1rem;
+
+    /* Ensures it captures all clicks */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Wrapper Inside .viewer That Shrinks to Fit Image */
+.viewer-content {
+    display: grid;
+    grid-template-rows: auto minmax(0, 1fr);
+    justify-items: center;
+    align-items: center;
+    
+    /* Ensures the container only wraps around the image */
+    max-width: fit-content;
+    max-height: calc(100% - 2rem);
+    background-color: transparent;
+    padding: 2rem;
+    border-radius: 8px; /* Optional: Softer look */
+}
+
+/* Close Button: Stays in Top-Right of Viewer Content */
+.close-viewer {
+    font-size: 2rem;
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    align-self: start;
+    justify-self: end;
+}
+
+/* Image: Prevents Overflow */
+.viewer img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+
 
 /* Medium screens: 700px to 1000px */
 @media (min-width: 700px){
@@ -130,4 +180,9 @@ img{
         display: inline;
         margin: 0 1rem;
     }
+
+    .viewer{
+        margin: 2rem;
+    }
+ 
   }
