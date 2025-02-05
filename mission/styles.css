@@ -68,12 +68,7 @@ body {
     margin-bottom: 60px;
 }
 
-/* Theme selector */
-.theme-selector {
-    position: absolute;
-    top: 0;
-    left: 0;
-}
+
 
 /* Dark Theme Styles */
 .dark {
@@ -83,4 +78,18 @@ body {
 
 .dark .sub-title {
     color: #A0D4ED;
+}
+
+.theme-selector-grid {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 5px;
+}
+
+.theme-selector-label{
+    font-family: 'Times New Roman', serif;
+    text-align: left;
 }
