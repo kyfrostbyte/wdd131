@@ -69,7 +69,8 @@ nav {
 
 /* Content Syles (content = title, image, description) */ 
 .content p {
-    color: var(--primary-color)
+    color: var(--primary-color);
+    font-size: 1.1rem;
 }
 
 .content { 
@@ -84,7 +85,7 @@ nav {
 
 .book-title{
     color: var(--secondary-color);
-    margin-top: 0.8rem;
+    margin-top: 0.4rem;
     font-size: 1.8rem;
 }
 
@@ -106,11 +107,11 @@ nav {
 }
 
 .details p {
-    margin: 0.8rem;
+    margin: 0.4rem;
 }
 
 .date {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
 }
 
 /* Filter form styles */
