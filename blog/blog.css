@@ -9,6 +9,10 @@ header{
     text-align: center;
 }
 
+main {
+    width: 95%;
+}
+
 body {
     font-family: "Montserrat", sans-serif; 
     font-optical-sizing: auto; 
@@ -51,44 +55,37 @@ nav {
     color: #77142d;
 }
 
-/* Main Content Styles */ 
+/* Grid Setup */ 
 #maincontent {
     display:grid;
     grid-template-columns: 3fr 1fr;
     padding: 0;
 }
 
- .book-container {
+.book-container {
     display: grid;
     grid-template-columns: 1fr 3fr;
 }
 
+/* Content Syles (content = title, image, description) */ 
 .content p {
     color: var(--primary-color)
 }
 
-/* Uncomment if .content is indeed supposed to be aligned-right*/
 .content { 
     padding: 1rem;
-    /* display: flex;
-    flex-direction: column; 
-    align-items: flex-end;
-    text-align: right;  */
  }
+
+ .content img {
+    display: block;
+    margin: 1rem auto; 
+    padding-left: 0;
+}
 
 .book-title{
     color: var(--secondary-color);
-    margin: 0;
-}
-
-.details {
-    color: var(--primary-color);
-    text-align: left;
-}
-
-img {
-    padding-left: 2rem;
-    margin-top: 1rem;
+    margin-top: 0.8rem;
+    font-size: 1.8rem;
 }
 
 .read-more-link {
@@ -96,6 +93,34 @@ img {
     color: var(--secondary-color);
     font-weight: bold;
     text-decoration: none; 
+}
+
+/* Details Syles (details = date, ages, genre, stars) */ 
+.details {
+    color: var(--primary-color);
+    text-align: right;
+    border-right: 2px solid var(--highlight-color);
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+}
+
+.details p {
+    margin: 0.8rem;
+}
+
+.date {
+    font-size: 1.3rem;
+}
+
+/* Filter form styles */
+.filters {
+    border: 2px solid var(--highlight-color);
+    padding: 1rem;
+}
+
+.filters p {
+    margin: 0;
 }
 
 /* Hidden link to skip to main content*/
