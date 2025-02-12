@@ -52,10 +52,14 @@ function bookTemplate(item) {
         <article class="content">
             <h2 class="book-title">${item.title}</h2>
             <img src="${item.imgSrc}" alt="${item.imgAlt}" width="250" height="337">
-            <p>${item.description} <a href="#" class="read-more-link">Read More...</a></p>
+            <p>
+                ${item.description}
+                <a href="#" class="read-more-link">Read More...</a>
+            </p>
         </article>
     `;
 }
+
 
 function displayBooks(articles) {
     articles.forEach(item => {
