@@ -159,4 +159,21 @@
       width: 100%;
     }
   }
+
+  @media (min-width: 965px) {
+    .participants {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+    }
+
+    #add {
+      grid-column: span 2;
+    }
+
+    /* When only one participant exist, don't create grid */
+    .participants:has(> section:nth-of-type(1):nth-last-of-type(1)) {
+        display: block;
+    }
+  }
   

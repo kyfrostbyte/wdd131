@@ -1,14 +1,18 @@
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <!-- Example based off of https://www.w3docs.com/learn-html/html-form-templates.html -->
   <head>
-    <title>Camp Registration</title>
-    <link
-      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700"
-      rel="stylesheet"
-    />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A camp registration form.">
+    <meta name="author" content="Aaron Alexander">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet"/>
     <link rel="stylesheet" href="register.css" />
+    <script type="module" src="templates.js" defer></script>
+    <script type="module" src="register.js" defer></script>
+    <title>Camp Registration</title>
   </head>
   <body>
     <div class="testbox">
@@ -35,8 +39,8 @@
               <input id="date" type="date" name="date" />
             </div>
             <div class="item">
-              <p>Grade</p>
-              <select>
+              <label for="grade">Grade<span>*</span></label>
+              <select id="grade" name="grade">
                 <option selected value="" disabled selected></option>
                 <option value="1">1st</option>
                 <option value="2">2nd</option>
@@ -128,8 +132,7 @@
                     name="relationship"
                   />
                   <label for="radio_6" class="radio"
-                    ><span>Guardian</span></label
-                  >
+                    ><span>Guardian</span></label>
                 </div>
                 <div>
                   <input
@@ -139,7 +142,8 @@
                     name="relationship"
                   />
                   <label for="radio_7" class="radio"><span>Other</span></label>
-                  <input type="text" />
+                  <label for="other">Other</label>
+                  <input type="text" id="other" name="other" /> 
                 </div>
               </div>
             </div>
