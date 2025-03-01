@@ -79,7 +79,9 @@
   .item span {
     color: red;
   }
-
+  .item label{
+    display: block;
+  }
 
   .columns {
     display: flex;
