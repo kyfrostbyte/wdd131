@@ -35,7 +35,7 @@
             <form id="search-bar" role="search">
                 <label for="search-input" class="hide">Search for a recipe</label>
                 <input id="search-input" type="text" placeholder="Find a recipe" />
-                <button type="submit"> <img src="images/search.svg" alt="Search"></button>
+                <button type="submit" aria-label="Search"> <img src="images/search.svg" alt="Search"></button>
             </form>
         </header>
         <main>
@@ -44,11 +44,11 @@
                     <img src="images/sweet-potato-waffle-md.jpg" alt="Delicious homemade sweet potato waffles">
                 </div>
                 <div class="recipe-content">
-                    <div class="tags-container">
-                        <p>waffles</p>
-                        <p>sweet potato</p>
-                        <p>side</p>
-                    </div>
+                    <ul class="tags-container">
+                        <li>waffles</li>
+                        <li>sweet potato</li>
+                        <li>side</li>
+                    </ul>
                     <h2 class="recipe-name">Sweet Potato Waffles</h2>
                     <span class="rating" role="img" aria-label="Rating: 4 out of 5 stars">
                         <span aria-hidden="true" class="icon-star">⭐</span>

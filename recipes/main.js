@@ -1,5 +1,6 @@
+// main.js
 
-
+// Hide / Show the recipe description
 const description = document.querySelector('.recipe-description');
 function handleResize() {
     if (window.innerWidth >= 600) {
@@ -8,7 +9,7 @@ function handleResize() {
         description.classList.add('hide');
     }
 }
-// Ensure webpage is sized properly, regardless of window size when opened
+
 window.addEventListener("resize", handleResize);
 
 // Run once on page load to set initial state
