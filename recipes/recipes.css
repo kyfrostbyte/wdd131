@@ -94,7 +94,7 @@ main {
     padding: 1.5rem;
 }
 
-.recipe-image img {
+.recipe-image {
     max-width: 100%;
     max-height: 350px; 
     width: auto;
