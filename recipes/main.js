@@ -13,17 +13,17 @@ window.addEventListener("load", handleResize);
 
 // Template Functions
 function recipeTemplate(recipe) {
-    return `<section class="recipe-card">
+    return `<figure class="recipe-card">
                 <img class="recipe-image" src="${recipe.image}" alt="${recipe.description}">
-                <div class="recipe-content">
+                <figcaption class ="recipe-content">
                     <ul class="tags-container">
                         ${tagsTemplate(recipe.tags)}
                     </ul>
                     <h2 class="recipe-name">${recipe.name}</h2>
                     ${ratingTemplate(recipe.rating)}
                     <p class="recipe-description">${recipe.description}</p>
-                </div>
-             </section>`
+                </figcaption>
+            </figure>`
 }
 
 function tagsTemplate(tags) {
@@ -51,7 +51,7 @@ function renderRecipes(recipeList) {
     mainElement.innerHTML = recipesHTML;
 }
 
-// Helper functions for displaying a random recipe for page load
+// Helper functions for displaying a random recipe on page load
 function random(number) {
     return Math.floor(Math.random() * number);
 }
