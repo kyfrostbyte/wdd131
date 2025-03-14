@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <!-- Fonts --> 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Mooli&display=swap" rel="stylesheet">
+        <!-- Fonts -->
+        <link href="./fonts/Mooli-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+        
+        <!-- Preload Social Media Assets -->
+        <link rel="preload" href="images/instagram_icon.svg" as="image">
+        <link rel="preload" href="images/youtube_icon.svg" as="image">
+        <link rel="preload" href="images/pinterest_icon.svg" as="image">
 
         <!-- Social Media Meta Elements -->
         <meta property="og:title" content="Recipes">
@@ -21,7 +24,7 @@
         <meta name="description" content="A catalog of different recipes for homemade cooking.">
         <meta name="author" content="Aaron Alexander">
         <link rel="icon" type="image/png" href="images/favicon.png">
-        <link rel="stylesheet" href="recipes.css" />
+        <link rel="stylesheet" href="/recipes/recipes.css">
         <script src="main.js" type="module"  defer></script>
         <title>Recipes</title>
     </head>
@@ -38,13 +41,14 @@
             </form>
         </header>
         <main>
+            <section id="recipes-container"></section>
         </main>
         <footer>
             <div class="social">
                 <!-- Social media icons provided under CC from https://www.iconfinder.com/AlfredoCreates  -->
-                <a href="#"><img src="images/instagram_icon.svg" alt="instagram icon"></a>
-                <a href="#"><img src="images/youtube_icon.svg" alt="youtube icon"></a>
-                <a href="#"><img src="images/pinterest_icon.svg" alt="pinterest icon"></a>
+                <a href="#" aria-label="Visit our Instagram page"> <img src="images/instagram_icon.svg" alt="instagram icon"></a>
+                <a href="#" aria-label="Visit our YouTube channel"> <img src="images/youtube_icon.svg" alt="youtube icon"></a>
+                <a href="#" aria-label="Visit our Pinterest page"> <img src="images/pinterest_icon.svg" alt="pinterest icon"></a>
             </div>
             <a href="https://www.flaticon.com/free-icons/recipe" title="recipe icons">Recipe icons created by Freepik - Flaticon</a>
         </footer>

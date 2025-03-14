@@ -4,12 +4,20 @@
     --text-dark: #005d91;
     --text-light: #0079be;
     --primary-font: Arial, Helvetica,sans-serif;
-    --secondary-font: "Mooli", sans-serif;
+    --secondary-font: 'Mooli', 'Arial', sans-serif;
+}
+
+@font-face {
+    font-family: 'Mooli', 'Arial', sans-serif;
+    src: url('./fonts/Mooli-Regular.woff2') format('woff2');
+    font-display: swap;
 }
 
 body { 
+    min-height: 100vh;
     margin: 0;
-    font-family: var(--primary-font)
+    font-family: var(--primary-font);
+    
 }
 
 p {
@@ -29,10 +37,12 @@ main {
     justify-content: center;
     align-items: end;
     padding: 2rem;
+    height: 88px;
 }
 
 #site-header img {
-    width: 5.5rem;
+    width: 88px;
+    height: 88px;
 }
 
 #site-header h1 {
@@ -101,9 +111,9 @@ main {
 
 .recipe-image {
     width: 100%; 
-    height: auto; 
-    max-width: 400px; 
+    height: auto;
     object-fit: cover; 
+    aspect-ratio: 4/3;
     flex-shrink: 1; 
 }
 
@@ -130,16 +140,23 @@ main {
     margin: 1rem 0 0 0;
 }
 
+.recipe-description {
+    font-size: 1.1rem;
+}
+
 .rating {
     margin-bottom: 1rem;
 }
 
 footer {
+    font-family: var(--primary-font);
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 0.5rem;
     padding: 0 1.5rem;
+    height: 150px;
+    visibility: hidden;
 }
 
 footer a {
@@ -154,6 +171,7 @@ footer a:hover {
 
 .social img{
     width: 55px;
+    height: 55px;
 }
 
 .hide {

@@ -9,7 +9,6 @@ function handleResize() {
     });
 }
 window.addEventListener("resize", handleResize);
-window.addEventListener("load", handleResize);
 
 // Template Functions
 function recipeTemplate(recipe) {
@@ -46,9 +45,9 @@ function ratingTemplate(rating) {
 }
 
 function renderRecipes(recipeList) {
-    const mainElement = document.querySelector('main');
+    const recipesContainer = document.getElementById("recipes-container");
     const recipesHTML = recipeList.map(recipe => recipeTemplate(recipe)).join('\n');
-    mainElement.innerHTML = recipesHTML;
+    recipesContainer.innerHTML = recipesHTML;
 }
 
 // Helper functions for displaying a random recipe on page load
@@ -58,11 +57,6 @@ function random(number) {
 
 function getRandomListEntry(list) {
     return list[random(list.length)];
-}
-
-function init() {
-    const recipe = getRandomListEntry(recipes);
-    renderRecipes([recipe]);
 }
 
 // Search Button Logic
@@ -76,7 +70,6 @@ function searchHandler(event) {
     if (searchInputElement.value != null) {
         renderRecipes(filterRecipes(searchInputElement.value.toLowerCase()));
     }
-    
 }
 
 function filterRecipes(query) {
@@ -89,5 +82,17 @@ function filterRecipes(query) {
 
     return filteredRecipes.sort((a, b) => a.name.localeCompare(b.name));
 }
+
+function init() {
+    const recipe = getRandomListEntry(recipes);
+    renderRecipes([recipe]);
+
+    // Call handleResize() after initial recipe is rendered
+    handleResize();
+}
+
+window.addEventListener('load', () => {
+    document.querySelector('footer').style.visibility = 'visible';
+});
 
 init();
