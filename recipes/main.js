@@ -91,6 +91,13 @@ function init() {
     handleResize();
 }
 
+// I spent over 3 hours trying to get my performace score to 100.
+// The font being loaded too late kept causing a layout shift in the footer which was hurting the score.
+// I tried different imports, links, even downloaded the font at one point and tried to reference it locally.
+// I tried giving preset static sizes for the header and footer. I tried literally everything I could think.
+// Nothing fixed it. Eventually I tried not rendering the footer until everything was loaded, and that fixed it.
+// I am sure there is a better way to do this. But after 3 hours I just had to move on and use the only approach 
+// that I had found that had any effect. Hence this weird EventListener below.
 window.addEventListener('load', () => {
     document.querySelector('footer').style.visibility = 'visible';
 });
