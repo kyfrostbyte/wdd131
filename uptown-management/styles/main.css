@@ -35,18 +35,22 @@ body {
 
 /* Sidebar Nav Menu*/
 .sidebar {
+    position: absolute; /* Always float over the page */
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 170px;
+    height: 100vh;
     background-color: var(--nav-background-color);
-    color: var(--accent2-color);
-    width: 220px;
     transition: width 0.3s ease;
     overflow: hidden;
-    height: 100vh;
     display: flex;
     flex-direction: column;
 }
   
 .sidebar.collapsed {
-    width: 60px;
+    min-width: 55px;
+    width: 55px;
 }
   
 .toggle-btn {
@@ -102,6 +106,15 @@ body {
     display: none;
 }
 
+/* Spacer to stop layout shift when sidebar is expanded */
+#sidebar-spacer {
+    width: 55px;
+}
+  
+.hidden {
+    display: none;
+}
+
 .content-wrapper {
     display: flex;
     flex-direction: column;
@@ -117,7 +130,13 @@ body {
     display: flex;
     align-items: center;
     padding: 0 1rem;
-  }
+    justify-content: end;
+}
+
+.top-banner img{
+    max-height: 50px;
+    width: auto;
+}
   
   /* Main page content */
 .main-content {
@@ -126,4 +145,4 @@ body {
     background-color: #f5f5f5;
     overflow-y: auto;
 }
-  
+
