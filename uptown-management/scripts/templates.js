@@ -32,5 +32,5 @@ export function renderSidebar(target = document.body) {
   const wrapper = document.createElement("div");
   wrapper.innerHTML = sidebarTemplate;
   const sidebarElements = Array.from(wrapper.children);
-  sidebarElements.forEach(el => target.insertBefore(el, target.firstChild));
+  sidebarElements.forEach((el) => target.insertBefore(el, target.firstChild));
 }
