@@ -34,3 +34,61 @@ export function renderSidebar(target = document.body) {
   const sidebarElements = Array.from(wrapper.children);
   sidebarElements.forEach((el) => target.insertBefore(el, target.firstChild));
 }
+
+
+// Slideshow Modal Logic
+export function createHelpSlideshow(slides) {
+  // Create base elements
+  const modal = document.createElement("div");
+  modal.classList.add("help-slideshow-modal");
+
+  modal.innerHTML = `
+    <div class="help-slideshow-content">
+      <button class="help-slideshow-close">✕</button>
+      <img src="" alt="Help Slide" />
+      <p></p>
+      <div class="help-slideshow-controls">
+        <button class="prev-slide">Prev</button>
+        <button class="next-slide">Next</button>
+      </div>
+    </div>
+  `;
+
+  document.body.appendChild(modal);
+
+  const imgEl = modal.querySelector("img");
+  const textEl = modal.querySelector("p");
+  const closeBtn = modal.querySelector(".help-slideshow-close");
+  const nextBtn = modal.querySelector(".next-slide");
+  const prevBtn = modal.querySelector(".prev-slide");
+
+  let current = 0;
+
+  const updateSlide = () => {
+    imgEl.src = slides[current].img;
+    textEl.textContent = slides[current].text;
+  };
+
+  nextBtn.addEventListener("click", () => {
+    current = (current + 1) % slides.length;
+    updateSlide();
+  });
+
+  prevBtn.addEventListener("click", () => {
+    current = (current - 1 + slides.length) % slides.length;
+    updateSlide();
+  });
+
+  closeBtn.addEventListener("click", () => {
+    modal.classList.remove("active");
+  });
+
+  // Return an open method
+  return {
+    open: () => {
+      current = 0;
+      updateSlide();
+      modal.classList.add("active");
+    }
+  };
+}

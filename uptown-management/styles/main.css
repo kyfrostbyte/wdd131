@@ -243,3 +243,67 @@ body {
   max-height: 1000px;
   padding: 1.5rem;
 }
+
+/* Help Slideshow Modal */
+.help-slideshow-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.help-slideshow-modal.active {
+  display: flex;
+}
+
+.help-slideshow-content {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+  position: relative;
+}
+
+.help-slideshow-content img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.help-slideshow-content p {
+  font-family: var(--paragraph-font);
+  font-size: 1rem;
+}
+
+.help-slideshow-controls {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.help-slideshow-controls button,
+.help-slideshow-close {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.4rem 1rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.help-slideshow-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.75rem;
+  font-size: 1.2rem;
+  padding: 0.25rem 0.6rem;
+}
