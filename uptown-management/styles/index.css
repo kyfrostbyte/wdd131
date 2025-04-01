@@ -4,8 +4,8 @@
   align-items: center;
   justify-content: start;
   gap: 1rem;
-  margin-bottom: 3rem;
-  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
   border-bottom: 3px solid var(--primary-color);
 }
 
@@ -15,8 +15,6 @@
   font-family: var(--heading-font);
   margin: 0;
   padding-left: 1rem;
-
-  /* Gradient text */
   background: linear-gradient(
     90deg,
     var(--primary-color),
@@ -45,36 +43,49 @@
   transform: rotate(-5deg) scale(1.05);
 }
 
+/* Sneak Peak Box Styles */
 .sneak-peak-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 200px));
+  justify-content: center; 
   gap: 0.5rem;
-  max-width: 700px;
-  margin: 0 auto 3rem auto;
-  padding: 0 1rem;
+  margin: 0 auto;
+  padding-bottom: 2rem;
   box-sizing: border-box;
 }
 
 .sneak-peak-box {
   aspect-ratio: 1 / 1;
-  background-color: white;
+  width: 100%;
   border: 2px solid var(--primary-color);
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
   padding: 1rem;
+  background-color: white;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  box-sizing: border-box;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  text-align: center;
   font-family: var(--paragraph-font);
   color: var(--text-color);
-  text-align: center;
-  box-sizing: border-box;
+  overflow: hidden; 
 }
 
-.sneak-peak-box:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+.sneak-label {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+}
+
+.sneak-value {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--accent1-color);
 }
 
 .main-grid {
@@ -82,6 +93,8 @@
   flex-direction: column;
 }
 
+
+/* Schedule and TodoStyles */
 .section-block {
   max-width: 480px;
   width: 100%;
@@ -105,22 +118,147 @@
 
 .section-content {
   width: 100%;
-  height: 400px;
-  padding: 1.5rem;
+  padding: 0;
   box-sizing: border-box;
   font-family: var(--paragraph-font);
+  height: 400px; 
+  overflow: hidden;
 }
 
-/* On wider screens, show 4 sneak peak boxes per row */
-@media (min-width: 650px) {
-  .sneak-peak-container {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 0.5rem;
-    max-width: 950px;
-  }
+/* Todo List Styles */
+.todo-container ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
 
-  .sneak-peak-box {
-    max-width: 240px;
+.todo-content {
+  padding: 1.5rem;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.todo-item input[type="checkbox"] {
+  margin-right: 0.5rem;
+}
+
+.todo-label {
+  flex-grow: 1;
+  word-break: break-word;
+}
+
+.todo-label.checked {
+  text-decoration: line-through;
+  color: gray;
+}
+
+.todo-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.todo-actions button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--primary-color);
+  font-size: 1rem;
+}
+
+
+/* Add Task Modal Styles */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.2);
+}
+
+
+#new-task {
+  height: 48px;
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+.modal-buttons button, .todo-input button{
+  width: 60px;
+  padding: 0.4rem;
+  font-size: 0.85rem;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.modal-buttons button:hover {
+  background-color: var(--accent1-color);
+}
+
+.hidden {
+  display: none;
+}
+
+.todo-input button {
+  width: 80px;
+}
+
+
+/* Help Section Styles */
+.dashboard-help {
+  border: 2px solid var(--primary-color);
+  border-radius: 12px;
+  background-color: white;
+  max-width: 800px;
+  margin: 2rem auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  max-width: 480px;
+}
+
+
+
+
+/* On wider screens, show 4 sneak peak boxes per row */
+/* 💻 Layout switches to 1 row of 4 boxes on larger screens */
+@media (min-width: 750px) {
+  .sneak-peak-container {
+    grid-template-columns: repeat(4, minmax(0, 230px));
   }
 }
 

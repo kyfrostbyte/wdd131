@@ -13,13 +13,5 @@ document.addEventListener("DOMContentLoaded", () => {
     sidebarSpacer.classList.toggle("expanded");
   });
 
-  // Help section toggle
-  const helpToggleBtn = document.querySelector(".help-toggle");
-  const helpContent = document.querySelector(".help-content");
-
-  helpToggleBtn?.addEventListener("click", () => {
-    const isExpanded = helpToggleBtn.getAttribute("aria-expanded") === "true";
-    helpToggleBtn.setAttribute("aria-expanded", String(!isExpanded));
-    helpContent.classList.toggle("open", !isExpanded);
-  });
+ 
 });
