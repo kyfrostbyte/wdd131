@@ -12,6 +12,4 @@ document.addEventListener("DOMContentLoaded", () => {
     sidebar.classList.toggle("collapsed");
     sidebarSpacer.classList.toggle("expanded");
   });
-
- 
 });

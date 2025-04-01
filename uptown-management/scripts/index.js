@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   saveBtn?.addEventListener("click", () => {
-    addTask(); // also triggers sneak peek update
+    addTask();
   });
 
   input.addEventListener("keydown", (e) => {
@@ -28,11 +28,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
   renderTasks();
   updateSneakPeekBoxes();
+
+  const helpToggleBtn = document.querySelector(".help-toggle");
+  const helpContent = document.querySelector(".help-content");
+
+  if (helpToggleBtn && helpContent) {
+    helpToggleBtn.addEventListener("click", () => {
+      const isExpanded = helpToggleBtn.getAttribute("aria-expanded") === "true";
+      helpToggleBtn.setAttribute("aria-expanded", String(!isExpanded));
+      helpContent.classList.toggle("open");
+    });
+  }
 });
 
 function updateSneakPeekBoxes() {
   const taskList = getTasks();
-  const finished = taskList.filter(task => task.completed).length;
+  const finished = taskList.filter((task) => task.completed).length;
   const unfinished = taskList.length - finished;
 
   document.getElementById("finished-count").textContent = finished;

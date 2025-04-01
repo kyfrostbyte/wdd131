@@ -138,6 +138,54 @@ body {
   width: auto;
 }
 
+
+/* Page Title and Image */
+
+.page-title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 3px solid var(--primary-color);
+}
+
+.page-title h1 {
+  font-size: clamp(1.5rem, 3.5vw, 2.75rem);
+  color: var(--headline-color-on-white);
+  font-family: var(--heading-font);
+  margin: 0;
+  padding-left: 1rem;
+  background: linear-gradient(
+    90deg,
+    var(--primary-color),
+    var(--accent1-color)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: var(--primary-color);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.page-title img {
+  margin-left: 1rem;
+  max-width: 80px;
+  height: auto;
+  flex-shrink: 0;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px var(--accent1-color);
+  background-color: white;
+  padding: 3px;
+}
+
+.page-title img:hover {
+  transform: rotate(-5deg) scale(1.05);
+}
+
 /* Main page content */
 .main-content {
   flex: 1;
@@ -150,62 +198,47 @@ body {
 }
 
 /* Help Section */
-.help-section {
-  max-width: 700px;
+.dashboard-help {
+  border: 2px solid var(--primary-color);
+  border-radius: 12px;
+  background-color: white;
+  max-width: 500px;
   margin: 2rem auto;
-  background-color: #ffffff;
-  border: 1px solid var(--primary-color);
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  font-family: var(--paragraph-font);
-  transition: all 0.3s ease;
 }
 
-.help-toggle {
+.dashboard-help .help-toggle {
   width: 100%;
   background-color: var(--secondary-color);
   color: var(--text-color);
   font-family: var(--heading-font);
-  font-size: 1rem;
-  padding: 0.75rem 1rem;
-  text-align: left;
+  font-size: 1.25rem;
+  padding: .5rem;
+  border: none;
+  text-align: center;
+  cursor: pointer;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
-.help-toggle:hover {
+.help-toggle:hover{
   background-color: var(--accent1-color);
-  color: white;
+  color:white;
 }
 
-.help-content {
-  padding: 0 1.5rem;
-  font-size: 0.95rem;
-  color: var(--text-color);
-  background-color: var(--accent2-color);
-  overflow: hidden;
+.dashboard-help .help-content {
   max-height: 0;
+  overflow: hidden;
+  padding: 0 1.5rem;
   transition: max-height 0.4s ease, padding 0.3s ease;
+  box-sizing: border-box;
+  font-family: var(--paragraph-font);
 }
 
-.help-content.open {
-  padding: 1rem 1.5rem;
+.dashboard-help .help-content.open {
   max-height: 1000px;
-}
-.help-content p {
-  margin-bottom: 1rem;
-}
-
-.help-content ul {
-  margin-top: 0.5rem;
-  padding-left: 1.25rem;
-}
-
-.help-content li {
-  margin-bottom: 0.5rem;
+  padding: 1.5rem;
 }
