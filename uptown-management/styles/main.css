@@ -198,7 +198,7 @@ body {
 }
 
 /* Help Section */
-.dashboard-help {
+.help-container {
   border: 2px solid var(--primary-color);
   border-radius: 12px;
   background-color: white;
@@ -206,15 +206,16 @@ body {
   margin: 2rem auto;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   overflow: hidden;
+  font-family: var(--paragraph-font);
 }
 
-.dashboard-help .help-toggle {
+.help-toggle {
   width: 100%;
   background-color: var(--secondary-color);
   color: var(--text-color);
   font-family: var(--heading-font);
   font-size: 1.25rem;
-  padding: .5rem;
+  padding: 0.5rem;
   border: none;
   text-align: center;
   cursor: pointer;
@@ -222,23 +223,23 @@ body {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.help-toggle:hover{
+.help-toggle:hover {
   background-color: var(--accent1-color);
-  color:white;
+  color: white;
 }
 
-.dashboard-help .help-content {
+.help-content {
   max-height: 0;
   overflow: hidden;
   padding: 0 1.5rem;
   transition: max-height 0.4s ease, padding 0.3s ease;
   box-sizing: border-box;
-  font-family: var(--paragraph-font);
 }
 
-.dashboard-help .help-content.open {
+.help-content.open {
   max-height: 1000px;
   padding: 1.5rem;
 }
