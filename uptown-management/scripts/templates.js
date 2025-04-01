@@ -12,7 +12,7 @@ export const sidebarTemplate = `
         <span class="material-symbols-outlined">home</span>
         <span class="label">Dashboard</span>
       </a>
-      <a href="coming-soon.html" class="nav-item">
+      <a href="staff.html" class="nav-item">
         <span class="material-symbols-outlined">group</span>
         <span class="label">Contacts</span>
       </a>

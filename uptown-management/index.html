@@ -5,21 +5,39 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Mooli&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mooli&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Social Media Meta Elements -->
     <meta property="og:title" content="Uptown Management Tools" />
     <meta property="og:type" content="website" />
-    <meta property="og:description" content="A tool for managing staff, schedules, tasks, and customers." />
-    <meta property="og:image" content="https://kyfrostbyte.github.io/wdd131/uptown-management/assets/images/logo_with_slogan.png" />
-    <meta property="og:image:alt" content="A hand holding a wrench surrounding by a gear with the words Uptown Management Tools underneath. " />
-    <meta property="og:url" content="https://kyfrostbyte.github.io/wdd131/uptown-management/index.html" />
+    <meta
+      property="og:description"
+      content="A tool for managing staff, schedules, tasks, and customers."
+    />
+    <meta
+      property="og:image"
+      content="https://kyfrostbyte.github.io/wdd131/uptown-management/assets/images/logo_with_slogan.png"
+    />
+    <meta
+      property="og:image:alt"
+      content="A hand holding a wrench surrounding by a gear with the words Uptown Management Tools underneath. "
+    />
+    <meta
+      property="og:url"
+      content="https://kyfrostbyte.github.io/wdd131/uptown-management/index.html"
+    />
     <meta name="twitter:card" content="summary_large_image" />
 
     <!-- Standard Head Elements -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="A tool for managing staff, schedules, tasks, and customers." />
+    <meta
+      name="description"
+      content="A tool for managing staff, schedules, tasks, and customers."
+    />
     <meta name="author" content="Aaron Alexander" />
     <link rel="icon" type="image/png" href="assets/images/favicon.ico" />
     <title>Uptown Management Tools</title>
@@ -27,7 +45,10 @@
     <!-- Stylesheet and JavaScript Links -->
     <link rel="stylesheet" href="styles/index.css" />
     <link rel="stylesheet" href="styles/main.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+    />
     <script src="scripts/main.js" type="module" defer></script>
     <script src="scripts/index.js" type="module" defer></script>
     <script src="scripts/templates.js" type="module" defer></script>
@@ -54,17 +75,17 @@
             <p class="sneak-label">Unfinished Tasks</p>
             <p class="sneak-value" id="unfinished-count">0</p>
           </div>
-          
+
           <div class="sneak-peak-box" id="finished-box">
             <p class="sneak-label">Finished Tasks</p>
             <p class="sneak-value" id="finished-count">0</p>
           </div>
-          
+
           <div class="sneak-peak-box" id="unread-messages-box">
             <p class="sneak-label">Unread Messages</p>
             <p class="sneak-value" id="unread-message-count">0</p>
           </div>
-          
+
           <div class="sneak-peak-box" id="time-off-box">
             <p class="sneak-label">Time-Off Requests</p>
             <p class="sneak-value" id="time-off-count">0</p>
@@ -78,14 +99,14 @@
 
           <section class="todo-section-block section-block">
             <h3 class="section-title">To Do List</h3>
-            
+
             <div class="todo-content">
               <div class="section-content todo-container"></div>
-          
+
               <div class="todo-input">
                 <button id="open-task-modal">+ Add Task</button>
               </div>
-            
+
               <div id="task-modal" class="modal hidden">
                 <div class="modal-content">
                   <input
@@ -101,10 +122,7 @@
                   </div>
                 </div>
               </div>
-            </div>  
-
-          
-            
+            </div>
           </section>
         </div>
 
@@ -113,27 +131,54 @@
             <span class="material-symbols-outlined">help</span>
             Help & Dashboard Overview
           </button>
-        
+
           <div class="help-content">
             <p>
               The dashboard provides a clear and organized view of the company.
               It helps you manage the schedules, track tasks, and stay updated
               on important work-related activities, all in one place.
             </p>
-        
-            <p><strong>Schedule Viewer:</strong> Allows you to see the work schedule at a glance. You can adjust the date to view different days and stay prepared for upcoming shifts, meetings, and deadlines.</p>
-        
-            <p><strong>To-Do List:</strong> Helps you manage your daily tasks. You can check off completed items and update the list as needed to keep track of your progress.</p>
-        
-            <p><strong>Information Boxes:</strong> The dashboard includes four key info boxes:</p>
+
+            <p>
+              <strong>Schedule Viewer:</strong> Allows you to see the work
+              schedule at a glance. You can adjust the date to view different
+              days and stay prepared for upcoming shifts, meetings, and
+              deadlines.
+            </p>
+
+            <p>
+              <strong>To-Do List:</strong> Helps you manage your daily tasks.
+              You can check off completed items and update the list as needed to
+              keep track of your progress.
+            </p>
+
+            <p>
+              <strong>Information Boxes:</strong> The dashboard includes four
+              key info boxes:
+            </p>
             <ul>
-              <li><strong>Active Task Count:</strong> Tasks you are currently working on.</li>
-              <li><strong>Upcoming Schedule Issues:</strong> Conflicts or changes in your schedule.</li>
-              <li><strong>Unread Messages:</strong> New messages from team members or management.</li>
-              <li><strong>Time-Off Requests:</strong> Pending or approved requests for planning ahead.</li>
+              <li>
+                <strong>Active Task Count:</strong> Tasks you are currently
+                working on.
+              </li>
+              <li>
+                <strong>Upcoming Schedule Issues:</strong> Conflicts or changes
+                in your schedule.
+              </li>
+              <li>
+                <strong>Unread Messages:</strong> New messages from team members
+                or management.
+              </li>
+              <li>
+                <strong>Time-Off Requests:</strong> Pending or approved requests
+                for planning ahead.
+              </li>
             </ul>
-        
-            <p>This streamlined dashboard is designed to keep you organized, informed, and focused throughout the workday.</p>
+
+            <p>
+              This streamlined dashboard is designed to keep you organized,
+              informed, and focused throughout the workday.
+            </p>
           </div>
         </section>
       </main>
