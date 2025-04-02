@@ -1,3 +1,4 @@
+import { taskTemplate } from "./templates.js";
 const initialTasks = [
   { id: 1, text: "Finish next weeks schedule", completed: false },
   { id: 2, text: "Approve time cards", completed: false },
@@ -12,38 +13,25 @@ const modal = document.getElementById("task-modal");
 const input = document.getElementById("new-task");
 let editingTaskId = null;
 
+
+
 function renderTasks() {
-  container.innerHTML = "";
-  const ul = document.createElement("ul");
+  container.innerHTML = taskTemplate(tasks);
 
-  tasks.forEach((task) => {
-    const li = document.createElement("li");
-    li.className = "todo-item";
-
-    const checkbox = document.createElement("input");
-    checkbox.type = "checkbox";
-    checkbox.id = `task-${task.id}`;
-    checkbox.checked = task.completed;
-    checkbox.onchange = () => toggleTask(task.id);
-
-    const label = document.createElement("label");
-    label.setAttribute("for", checkbox.id);
-    label.textContent = task.text;
-    label.className = "todo-label";
-    if (task.completed) label.classList.add("checked");
-
-    const actions = document.createElement("div");
-    actions.className = "todo-actions";
-    actions.innerHTML = `
-      <button onclick="editTask(${task.id})">✏️</button>
-      <button onclick="deleteTask(${task.id})">🗑️</button>
-    `;
-
-    li.append(checkbox, label, actions);
-    ul.appendChild(li);
+  container.querySelectorAll("input[type='checkbox']").forEach((checkbox) => {
+    const id = parseInt(checkbox.id.replace("task-", ""));
+    checkbox.addEventListener("change", () => toggleTask(id));
   });
 
-  container.appendChild(ul);
+  container.querySelectorAll("button[data-edit-id]").forEach((btn) => {
+    const id = parseInt(btn.dataset.editId);
+    btn.addEventListener("click", () => editTask(id));
+  });
+
+  container.querySelectorAll("button[data-delete-id]").forEach((btn) => {
+    const id = parseInt(btn.dataset.deleteId);
+    btn.addEventListener("click", () => deleteTask(id));
+  });
 }
 
 function saveTasks() {
@@ -74,23 +62,23 @@ function toggleTask(id) {
   updateTasks();
 }
 
+function editTask(id) {
+  const task = tasks.find(t => t.id === id);
+  if (task) {
+    openAddTaskModal(task);
+  }
+}
+
+function deleteTask(id) {
+  tasks = tasks.filter(t => t.id !== id);
+  updateTasks();
+}
+
 function updateTasks() {
   saveTasks();
   renderTasks();
   dispatchTaskUpdate();
 }
-
-window.editTask = function (id) {
-  const task = tasks.find((t) => t.id === id);
-  if (task) {
-    openAddTaskModal(task);
-  }
-};
-
-window.deleteTask = function (id) {
-  tasks = tasks.filter((task) => task.id !== id);
-  updateTasks();
-};
 
 function openAddTaskModal(task = null) {
   modal.classList.remove("hidden");

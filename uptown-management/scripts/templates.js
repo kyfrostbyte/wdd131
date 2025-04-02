@@ -96,3 +96,24 @@ export function createHelpSlideshow(slides) {
   const { open } = attachSlideshowEvents(modal, slides);
   return { open };
 }
+
+
+// Tasks Templates
+
+export function taskTemplate(taskList) {
+  return `
+    <ul>
+      ${taskList.map((task) => `
+        <li class="todo-item">
+          <input type="checkbox" id="task-${task.id}" ${task.completed ? "checked" : ""}>
+          <label for="task-${task.id}" class="todo-label ${task.completed ? "checked" : ""}">${task.text}</label>
+          <div class="todo-actions">
+            <button data-edit-id="${task.id}">✏️</button>
+            <button data-delete-id="${task.id}">🗑️</button>
+          </div>
+        </li>`
+        )
+        .join("")}
+    </ul>
+  `;
+}
