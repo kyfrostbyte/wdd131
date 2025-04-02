@@ -10,6 +10,7 @@ saveTasks();
 const container = document.querySelector(".todo-container");
 const modal = document.getElementById("task-modal");
 const input = document.getElementById("new-task");
+let editingTaskId = null;
 
 function renderTasks() {
   container.innerHTML = "";
@@ -21,7 +22,7 @@ function renderTasks() {
 
     const checkbox = document.createElement("input");
     checkbox.type = "checkbox";
-    checkbox.id = `task-${task.id}`; // unique ID
+    checkbox.id = `task-${task.id}`;
     checkbox.checked = task.completed;
     checkbox.onchange = () => toggleTask(task.id);
 
@@ -45,7 +46,6 @@ function renderTasks() {
   container.appendChild(ul);
 }
 
-
 function saveTasks() {
   localStorage.setItem("tasks", JSON.stringify(tasks));
 }
@@ -54,9 +54,17 @@ function addTask() {
   const text = input.value.trim();
   if (!text) return;
 
-  tasks.push({ id: Date.now(), text, completed: false });
+  if (editingTaskId !== null) {
+    tasks = tasks.map(task =>
+      task.id === editingTaskId ? { ...task, text } : task
+    );
+    editingTaskId = null;
+  } else {
+    tasks.push({ id: Date.now(), text, completed: false });
+  }
+
   updateTasks();
-  closeModal();
+  closeAddTaskModal();
 }
 
 function toggleTask(id) {
@@ -73,13 +81,9 @@ function updateTasks() {
 }
 
 window.editTask = function (id) {
-  const current = tasks.find((t) => t.id === id);
-  const newText = prompt("Edit task:", current.text);
-  if (newText?.trim()) {
-    tasks = tasks.map((task) =>
-      task.id === id ? { ...task, text: newText.trim() } : task
-    );
-    updateTasks();
+  const task = tasks.find((t) => t.id === id);
+  if (task) {
+    openAddTaskModal(task);
   }
 };
 
@@ -88,14 +92,16 @@ window.deleteTask = function (id) {
   updateTasks();
 };
 
-function openAddTaskModal() {
+function openAddTaskModal(task = null) {
   modal.classList.remove("hidden");
-  input.value = "";
+  input.value = task ? task.text : "";
   input.focus();
+  editingTaskId = task ? task.id : null;
 }
 
 function closeAddTaskModal() {
   modal.classList.add("hidden");
+  editingTaskId = null;
 }
 
 function dispatchTaskUpdate() {
@@ -109,4 +115,4 @@ function getTasks() {
 // Initial render
 renderTasks();
 
-export { renderTasks, addTask, getTasks, openAddTaskModal, closeAddTaskModal};
+export { renderTasks, addTask, getTasks, openAddTaskModal, closeAddTaskModal };
