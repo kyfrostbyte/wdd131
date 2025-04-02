@@ -53,13 +53,35 @@ function updateSneakPeekBoxes() {
 }
 
 
+
 const todoSlides = [
-  { img: "assets/images/dashboard.png", text: "Click '+ Add Task' to create a new task." },
-  { img: "assets/images/dashboard_wireframe.png", text: "Check off tasks to mark them complete." },
-  { img: "assets/images/staff.jpg", text: "Edit or delete tasks with the icons." },
-  { img: "assets/images/scheduling.jpg", text: "Tasks update the Sneak Peek boxes live." },
-  { img: "assets/images/dashboard.png", text: "Everything is saved in your browser automatically." },
+  {
+    img: "assets/images/slideshow/slide1_addtaskbutton.webp",
+    text: "Click '+ Add Task' to create a new task.",
+    alt: "Add Task button screenshot"
+  },
+  {
+    img: "assets/images/slideshow/slide2_typetask.webp",
+    text: "Type your task in the task box.",
+    alt: "Typing a task in the input field"
+  },
+  {
+    img: "assets/images/slideshow/slide3_savetask.webp",
+    text: "Click the save button.",
+    alt: "Save task button"
+  },
+  {
+    img: "assets/images/slideshow/slide4_addedtask.webp",
+    text: "You will now see your new task added to the list.",
+    alt: "Task added to list view"
+  },
+  {
+    img: "assets/images/slideshow/slide5_sneakpeak.webp",
+    text: "The sneak peak boxes will automatically show updated statistics!",
+    alt: "Sneak peek statistics box"
+  }
 ];
+
 
 const todoHelpModal = createHelpSlideshow(todoSlides);
 

@@ -36,16 +36,14 @@ export function renderSidebar(target = document.body) {
 }
 
 
-// Slideshow Modal Logic
-export function createHelpSlideshow(slides) {
-  // Create base elements
+function createSlideshowTemplate() {
   const modal = document.createElement("div");
   modal.classList.add("help-slideshow-modal");
 
   modal.innerHTML = `
     <div class="help-slideshow-content">
       <button class="help-slideshow-close">✕</button>
-      <img src="" alt="Help Slide" />
+      <img src="" alt="" />
       <p></p>
       <div class="help-slideshow-controls">
         <button class="prev-slide">Prev</button>
@@ -54,6 +52,12 @@ export function createHelpSlideshow(slides) {
     </div>
   `;
 
+  return modal;
+}
+
+// Slideshow Modal Logic
+export function createHelpSlideshow(slides) {
+  const modal = createSlideshowTemplate();
   document.body.appendChild(modal);
 
   const imgEl = modal.querySelector("img");
@@ -66,6 +70,7 @@ export function createHelpSlideshow(slides) {
 
   const updateSlide = () => {
     imgEl.src = slides[current].img;
+    imgEl.alt = slides[current].alt;
     textEl.textContent = slides[current].text;
   };
 
@@ -83,7 +88,6 @@ export function createHelpSlideshow(slides) {
     modal.classList.remove("active");
   });
 
-  // Return an open method
   return {
     open: () => {
       current = 0;
