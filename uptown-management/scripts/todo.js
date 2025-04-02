@@ -21,17 +21,18 @@ function renderTasks() {
 
     const checkbox = document.createElement("input");
     checkbox.type = "checkbox";
+    checkbox.id = `task-${task.id}`; // unique ID
     checkbox.checked = task.completed;
     checkbox.onchange = () => toggleTask(task.id);
 
-    const label = document.createElement("span");
+    const label = document.createElement("label");
+    label.setAttribute("for", checkbox.id);
     label.textContent = task.text;
     label.className = "todo-label";
     if (task.completed) label.classList.add("checked");
 
     const actions = document.createElement("div");
     actions.className = "todo-actions";
-
     actions.innerHTML = `
       <button onclick="editTask(${task.id})">✏️</button>
       <button onclick="deleteTask(${task.id})">🗑️</button>
@@ -44,6 +45,7 @@ function renderTasks() {
   container.appendChild(ul);
 }
 
+
 function saveTasks() {
   localStorage.setItem("tasks", JSON.stringify(tasks));
 }
@@ -53,16 +55,18 @@ function addTask() {
   if (!text) return;
 
   tasks.push({ id: Date.now(), text, completed: false });
-  saveTasks();
-  renderTasks();
+  updateTasks();
   closeModal();
-  dispatchTaskUpdate();
 }
 
 function toggleTask(id) {
   tasks = tasks.map(task =>
     task.id === id ? { ...task, completed: !task.completed } : task
   );
+  updateTasks();
+}
+
+function updateTasks() {
   saveTasks();
   renderTasks();
   dispatchTaskUpdate();
@@ -75,26 +79,22 @@ window.editTask = function (id) {
     tasks = tasks.map((task) =>
       task.id === id ? { ...task, text: newText.trim() } : task
     );
-    saveTasks();
-    renderTasks();
-    dispatchTaskUpdate();
+    updateTasks();
   }
 };
 
 window.deleteTask = function (id) {
   tasks = tasks.filter((task) => task.id !== id);
-  saveTasks();
-  renderTasks();
-  dispatchTaskUpdate();
+  updateTasks();
 };
 
-function openModal() {
+function openAddTaskModal() {
   modal.classList.remove("hidden");
   input.value = "";
   input.focus();
 }
 
-function closeModal() {
+function closeAddTaskModal() {
   modal.classList.add("hidden");
 }
 
@@ -109,4 +109,4 @@ function getTasks() {
 // Initial render
 renderTasks();
 
-export { renderTasks, addTask, getTasks };
+export { renderTasks, addTask, getTasks, openAddTaskModal, closeAddTaskModal};

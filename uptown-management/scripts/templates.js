@@ -1,5 +1,6 @@
 // templates.js
 
+// Sidebar/Nav Functions
 export const sidebarTemplate = `
   <div id="sidebar-spacer"></div>
   <div class="sidebar collapsed">
@@ -35,11 +36,10 @@ export function renderSidebar(target = document.body) {
   sidebarElements.forEach((el) => target.insertBefore(el, target.firstChild));
 }
 
-
+// Slideshow Modal Functions
 function createSlideshowTemplate() {
   const modal = document.createElement("div");
   modal.classList.add("help-slideshow-modal");
-
   modal.innerHTML = `
     <div class="help-slideshow-content">
       <button class="help-slideshow-close">✕</button>
@@ -51,15 +51,10 @@ function createSlideshowTemplate() {
       </div>
     </div>
   `;
-
   return modal;
 }
 
-// Slideshow Modal Logic
-export function createHelpSlideshow(slides) {
-  const modal = createSlideshowTemplate();
-  document.body.appendChild(modal);
-
+function attachSlideshowEvents(modal, slides) {
   const imgEl = modal.querySelector("img");
   const textEl = modal.querySelector("p");
   const closeBtn = modal.querySelector(".help-slideshow-close");
@@ -88,11 +83,16 @@ export function createHelpSlideshow(slides) {
     modal.classList.remove("active");
   });
 
-  return {
-    open: () => {
-      current = 0;
-      updateSlide();
-      modal.classList.add("active");
-    }
-  };
+  return { updateSlide, open: () => {
+    current = 0;
+    updateSlide();
+    modal.classList.add("active");
+  }};
+}
+
+export function createHelpSlideshow(slides) {
+  const modal = createSlideshowTemplate();
+  document.body.appendChild(modal);
+  const { open } = attachSlideshowEvents(modal, slides);
+  return { open };
 }

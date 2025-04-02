@@ -1,10 +1,8 @@
-
-
 /* Sneak Peak Box Styles */
 .sneak-peak-container {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 200px));
-  justify-content: center; 
+  justify-content: center;
   gap: 0.5rem;
   margin: 0 auto;
   padding-bottom: 2rem;
@@ -29,7 +27,7 @@
   text-align: center;
   font-family: var(--paragraph-font);
   color: var(--text-color);
-  overflow: hidden; 
+  overflow: hidden;
 }
 
 .sneak-label {
@@ -49,7 +47,6 @@
   display: flex;
   flex-direction: column;
 }
-
 
 /* Schedule and TodoStyles */
 .section-block {
@@ -78,7 +75,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: var(--paragraph-font);
-  height: 400px; 
+  height: 400px;
   overflow: hidden;
 }
 
@@ -92,7 +89,7 @@
   padding: 0 2.5rem; /* Padding to make room for the icon */
 }
 
-#todo-title h3 {
+#todo-title h2 {
   margin: 0;
   font-size: 1.25rem;
 }
@@ -102,7 +99,6 @@
   right: 0.5rem;
   cursor: pointer;
 }
-
 
 .todo-container ul {
   list-style: none;
@@ -150,6 +146,15 @@
   font-size: 1rem;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  border: 0;
+}
 
 /* Add Task Modal Styles */
 .modal {
@@ -176,7 +181,6 @@
   box-shadow: 0 6px 24px rgba(0, 0, 0, 0.2);
 }
 
-
 #new-task {
   height: 48px;
   padding: 0.5rem 0.75rem;
@@ -192,7 +196,8 @@
   gap: 0.5rem;
 }
 
-.modal-buttons button, .todo-input button{
+.modal-buttons button,
+.todo-input button {
   width: 60px;
   padding: 0.4rem;
   font-size: 0.85rem;
@@ -215,10 +220,6 @@
 .todo-input button {
   width: 80px;
 }
-
-
-
-
 
 /* On wider screens, show 4 sneak peak boxes per row */
 /* 💻 Layout switches to 1 row of 4 boxes on larger screens */

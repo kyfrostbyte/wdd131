@@ -1,58 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+  <!-- prettier-ignore -->
   <head>
-    <!-- prettier-ignore-start -->
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Mooli&display=swap"
-      rel="stylesheet"
-    />
-
+    <link href="https://fonts.googleapis.com/css2?family=Mooli&display=swap" rel="stylesheet" />
+  
     <!-- Social Media Meta Elements -->
     <meta property="og:title" content="Uptown Management Tools" />
     <meta property="og:type" content="website" />
-    <meta
-      property="og:description"
-      content="A tool for managing staff, schedules, tasks, and customers."
-    />
-    <meta
-      property="og:image"
-      content="https://kyfrostbyte.github.io/wdd131/uptown-management/assets/images/logo_with_slogan.png"
-    />
-    <meta
-      property="og:image:alt"
-      content="A hand holding a wrench surrounding by a gear with the words Uptown Management Tools underneath. "
-    />
-    <meta
-      property="og:url"
-      content="https://kyfrostbyte.github.io/wdd131/uptown-management/index.html"
-    />
+    <meta property="og:description" content="A tool for managing staff, schedules, tasks, and customers." />
+    <meta property="og:image" content="https://kyfrostbyte.github.io/wdd131/uptown-management/assets/images/logo_with_slogan.png" />
+    <meta property="og:image:alt" content="A hand holding a wrench surrounding by a gear with the words Uptown Management Tools underneath. " />
+    <meta property="og:url" content="https://kyfrostbyte.github.io/wdd131/uptown-management/index.html" />
     <meta name="twitter:card" content="summary_large_image" />
-
+  
     <!-- Standard Head Elements -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="A tool for managing staff, schedules, tasks, and customers."
-    />
+    <meta name="description" content="A tool for managing staff, schedules, tasks, and customers." />
     <meta name="author" content="Aaron Alexander" />
     <link rel="icon" type="image/png" href="assets/images/favicon.ico" />
     <title>Uptown Management Tools</title>
-
+  
     <!-- Stylesheet and JavaScript Links -->
     <link rel="stylesheet" href="styles/index.css" />
     <link rel="stylesheet" href="styles/main.css" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
-    />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
     <script src="scripts/main.js" type="module" defer></script>
     <script src="scripts/index.js" type="module" defer></script>
     <script src="scripts/templates.js" type="module" defer></script>
-    <!-- prettier-ignore-end -->
   </head>
   <body>
     <div class="content-wrapper">
@@ -93,14 +71,18 @@
         </div>
         <div class="main-grid">
           <section class="section-block">
-            <h3 class="section-title">Schedule</h3>
+            <h2 class="section-title">Schedule</h2>
             <div class="section-content schedule-container"></div>
           </section>
 
           <section class="todo-section-block section-block">
             <div class="section-title" id="todo-title">
-              <h3>To Do List</h3>
-              <span id="todo-help-btn" class="material-symbols-outlined" title="Help">
+              <h2>To Do List</h2>
+              <span
+                id="todo-help-btn"
+                class="material-symbols-outlined"
+                title="Help"
+              >
                 help
               </span>
             </div>
@@ -111,14 +93,19 @@
                 <button id="open-task-modal">+ Add Task</button>
               </div>
 
-              <div id="task-modal" class="modal hidden">
+              <div
+                id="task-modal"
+                class="modal hidden"
+                role="dialog"
+                aria-modal="true"
+              >
                 <div class="modal-content">
+                  <label for="new-task" class="visually-hidden">New Task</label>
                   <input
                     type="text"
                     id="new-task"
                     placeholder="Enter new task"
                     autocomplete="off"
-                    aria-label="New Task"
                   />
                   <div class="modal-buttons">
                     <button id="save-task">Save</button>
@@ -129,7 +116,7 @@
             </div>
           </section>
         </div>
-        
+
         <section class="help-container">
           <button class="help-toggle" aria-expanded="false">
             <span class="material-symbols-outlined">help</span>
