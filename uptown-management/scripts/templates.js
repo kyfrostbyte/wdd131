@@ -55,31 +55,31 @@ function createSlideshowTemplate() {
 }
 
 function attachSlideshowEvents(modal, slides) {
-  const imgEl = modal.querySelector("img");
-  const textEl = modal.querySelector("p");
-  const closeBtn = modal.querySelector(".help-slideshow-close");
-  const nextBtn = modal.querySelector(".next-slide");
-  const prevBtn = modal.querySelector(".prev-slide");
+  const imageElement = modal.querySelector("img");
+  const textElement = modal.querySelector("p");
+  const closeButton = modal.querySelector(".help-slideshow-close");
+  const nextButton = modal.querySelector(".next-slide");
+  const previousButton = modal.querySelector(".prev-slide");
 
   let current = 0;
 
   const updateSlide = () => {
-    imgEl.src = slides[current].img;
-    imgEl.alt = slides[current].alt;
-    textEl.textContent = slides[current].text;
+    imageElement.src = slides[current].img;
+    imageElement.alt = slides[current].alt;
+    textElement.textContent = slides[current].text;
   };
 
-  nextBtn.addEventListener("click", () => {
+  nextButton.addEventListener("click", () => {
     current = (current + 1) % slides.length;
     updateSlide();
   });
 
-  prevBtn.addEventListener("click", () => {
+  previousButton.addEventListener("click", () => {
     current = (current - 1 + slides.length) % slides.length;
     updateSlide();
   });
 
-  closeBtn.addEventListener("click", () => {
+  closeButton.addEventListener("click", () => {
     modal.classList.remove("active");
   });
 
@@ -115,5 +115,19 @@ export function taskTemplate(taskList) {
         )
         .join("")}
     </ul>
+  `;
+}
+
+// Staff Templates
+export function staffRowTemplate(staff) {
+  return `
+    <tr data-id="${staff.id}">
+      <td>${staff.first}</td>
+      <td>${staff.last}</td>
+      <td>${staff.position}</td>
+      <td>${staff.email}</td>
+      <td>${staff.phone}</td>
+      <td><span class="material-symbols-outlined edit-icon">more_horiz</span></td>
+    </tr>
   `;
 }

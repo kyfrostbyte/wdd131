@@ -46,13 +46,17 @@
           <h1>Staff Directory</h1>
         </div>
 
-        <div class="staff-controls">
+        <div class="controls-container">
           <input type="text" id="staff-search" placeholder="Search staff..." />
           <select id="filter-position">
             <option value="">All Positions</option>
+            <!-- dynamically populated -->
           </select>
-          <button id="sort-name">Sort by Name</button>
-          <button id="sort-position">Sort by Position</button>
+          <select id="sort-by">
+            <option value="">Sort by</option>
+            <option value="name">Name</option>
+            <option value="position">Position</option>
+          </select>
         </div>
 
         <table class="staff-table">
@@ -103,6 +107,40 @@
               </p>
               
         </section>
+        <!-- Edit Staff Details Modal -->
+        <div id="edit-modal" class="modal hidden" role="dialog" aria-modal="true">
+          <div class="modal-content">
+            <h2>Edit Staff</h2>
+            <form id="edit-form">
+              <input type="hidden" id="edit-id" />
+              <label>
+                First Name:
+                <input type="text" id="edit-first" required />
+              </label>
+              <label>
+                Last Name:
+                <input type="text" id="edit-last" required />
+              </label>
+              <label>
+                Position:
+                <input type="text" id="edit-position" required />
+              </label>
+              <label>
+                Email:
+                <input type="email" id="edit-email" required />
+              </label>
+              <label>
+                Phone:
+                <input type="tel" id="edit-phone" required />
+              </label>
+              <div class="modal-buttons">
+                <button type="submit">Save</button>
+                <button type="button" id="edit-cancel">Cancel</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        
       </main>
 
       <footer></footer>
