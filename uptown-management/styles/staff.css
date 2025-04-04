@@ -68,7 +68,7 @@
   color: var(--accent2-color);
 }
 
-#table-header-content{
+#table-header-content {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -89,6 +89,13 @@
   display: none;
 }
 
+#table-header-content,
+.staff-table {
+  width: clamp(90%, 80vw, 100%);
+  margin: 0 auto;
+  transition: width 0.3s ease;
+}
+
 /*  Modal Styles  */
 .modal {
   position: fixed;
@@ -101,7 +108,7 @@
   align-items: center;
   justify-content: center;
   z-index: 100;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .modal-content {
@@ -167,7 +174,6 @@
   color: white;
 }
 
-
 .hidden {
   display: none;
 }
@@ -214,7 +220,7 @@
 }
 
 /* Show all columns on wider screens */
-@media (min-width: 200px) {
+@media (min-width: 1000px) {
   .staff-table td:nth-child(4),
   .staff-table th:nth-child(4),
   .staff-table td:nth-child(5),

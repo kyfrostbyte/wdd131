@@ -15,8 +15,6 @@ const modal = document.getElementById("task-modal");
 const input = document.getElementById("new-task");
 let editingTaskId = null;
 
-
-
 function renderTasks() {
   container.innerHTML = taskTemplate(tasks);
 
@@ -45,7 +43,7 @@ function addTask() {
   if (!text) return;
 
   if (editingTaskId !== null) {
-    tasks = tasks.map(task =>
+    tasks = tasks.map((task) =>
       task.id === editingTaskId ? { ...task, text } : task
     );
     editingTaskId = null;
@@ -58,21 +56,21 @@ function addTask() {
 }
 
 function toggleTask(id) {
-  tasks = tasks.map(task =>
+  tasks = tasks.map((task) =>
     task.id === id ? { ...task, completed: !task.completed } : task
   );
   updateTasks();
 }
 
 function editTask(id) {
-  const task = tasks.find(t => t.id === id);
+  const task = tasks.find((t) => t.id === id);
   if (task) {
     openAddTaskModal(task);
   }
 }
 
 function deleteTask(id) {
-  tasks = tasks.filter(t => t.id !== id);
+  tasks = tasks.filter((t) => t.id !== id);
   updateTasks();
 }
 

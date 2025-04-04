@@ -83,11 +83,14 @@ function attachSlideshowEvents(modal, slides) {
     modal.classList.remove("active");
   });
 
-  return { updateSlide, open: () => {
-    current = 0;
-    updateSlide();
-    modal.classList.add("active");
-  }};
+  return {
+    updateSlide,
+    open: () => {
+      current = 0;
+      updateSlide();
+      modal.classList.add("active");
+    },
+  };
 }
 
 export function createHelpSlideshow(slides) {
@@ -109,10 +112,16 @@ export function setupHelpSlideshow(todoSlides, elementId) {
 export function taskTemplate(taskList) {
   return `
     <ul>
-      ${taskList.map((task) => `
+      ${taskList
+        .map(
+          (task) => `
         <li class="todo-item">
-          <input type="checkbox" id="task-${task.id}" ${task.completed ? "checked" : ""}>
-          <label for="task-${task.id}" class="todo-label ${task.completed ? "checked" : ""}">${task.text}</label>
+          <input type="checkbox" id="task-${task.id}" ${
+            task.completed ? "checked" : ""
+          }>
+          <label for="task-${task.id}" class="todo-label ${
+            task.completed ? "checked" : ""
+          }">${task.text}</label>
           <div class="todo-actions">
             <button data-edit-id="${task.id}">✏️</button>
             <button data-delete-id="${task.id}">🗑️</button>

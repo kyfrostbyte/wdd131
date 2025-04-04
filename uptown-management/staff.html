@@ -5,20 +5,35 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Mooli&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mooli&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Meta -->
     <meta property="og:title" content="Uptown Management Tools" />
     <meta property="og:type" content="website" />
-    <meta property="og:description" content="A tool for managing staff, schedules, tasks, and customers." />
-    <meta property="og:image" content="https://kyfrostbyte.github.io/wdd131/uptown-management/assets/images/logo_with_slogan.png" />
+    <meta
+      property="og:description"
+      content="A tool for managing staff, schedules, tasks, and customers."
+    />
+    <meta
+      property="og:image"
+      content="https://kyfrostbyte.github.io/wdd131/uptown-management/assets/images/logo_with_slogan.png"
+    />
     <meta property="og:image:alt" content="Logo with wrench and Uptown text" />
-    <meta property="og:url" content="https://kyfrostbyte.github.io/wdd131/uptown-management/index.html" />
+    <meta
+      property="og:url"
+      content="https://kyfrostbyte.github.io/wdd131/uptown-management/index.html"
+    />
     <meta name="twitter:card" content="summary_large_image" />
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="A tool for managing staff, schedules, tasks, and customers." />
+    <meta
+      name="description"
+      content="A tool for managing staff, schedules, tasks, and customers."
+    />
     <meta name="author" content="Aaron Alexander" />
     <link rel="icon" type="image/png" href="assets/images/favicon.ico" />
     <title>Uptown Staff Management</title>
@@ -26,7 +41,10 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="styles/staff.css" />
     <link rel="stylesheet" href="styles/main.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+    />
 
     <!-- Scripts -->
     <script src="scripts/main.js" type="module" defer></script>
@@ -46,9 +64,18 @@
           <h1>Staff Directory</h1>
         </div>
         <div id="table-header-content">
-          <span id="position-help-btn" class="material-symbols-outlined help-icon" title="Help">help</span>
+          <span
+            id="position-help-btn"
+            class="material-symbols-outlined help-icon"
+            title="Help"
+            >help</span
+          >
           <div class="controls-container">
-            <input type="text" id="staff-search" placeholder="Search staff..." />
+            <input
+              type="text"
+              id="staff-search"
+              placeholder="Search staff..."
+            />
             <select id="filter-position">
               <option value="">All Positions</option>
             </select>
@@ -59,8 +86,6 @@
             </select>
           </div>
         </div>
-        
-
         <table class="staff-table">
           <thead>
             <tr>
@@ -85,32 +110,51 @@
 
           <div class="help-content">
             <p>
-                The staff page provides a clear and organized overview of all staff members in one place. It allows managers to quickly access and update staff information as needed.
-              </p>
-              
-              <p>
-                <strong>Staff Table:</strong> Displays key details for each staff member, including first and last name, position, email, and phone number. This makes it easy to find and reference important contact and role information.
-              </p>
-              
-              <p>
-                <strong>Edit Button:</strong> Each row includes an edit icon that allows managers to update individual staff details directly from the table, helping ensure the information stays accurate and up to date.
-              </p>
-              
-              <p>
-                <strong>Search Function:</strong> Managers can quickly locate specific staff members by name, position, or contact details using the search input above the table.
-              </p>
-              
-              <p>
-                <strong>Sort & Filter Options:</strong> Use the available buttons to sort by name or position, or filter by role to narrow down the list and focus on specific groups.
-              </p>
-              
-              <p>
-                This streamlined staff page is designed to help managers efficiently manage staff information, keep records organized, and access key details at a glance.
-              </p>
-              
+              The staff page provides a clear and organized overview of all
+              staff members in one place. It allows managers to quickly access
+              and update staff information as needed.
+            </p>
+
+            <p>
+              <strong>Staff Table:</strong> Displays key details for each staff
+              member, including first and last name, position, email, and phone
+              number. This makes it easy to find and reference important contact
+              and role information.
+            </p>
+
+            <p>
+              <strong>Edit Button:</strong> Each row includes an edit icon that
+              allows managers to update individual staff details directly from
+              the table, helping ensure the information stays accurate and up to
+              date.
+            </p>
+
+            <p>
+              <strong>Search Function:</strong> Managers can quickly locate
+              specific staff members by name, position, or contact details using
+              the search input above the table.
+            </p>
+
+            <p>
+              <strong>Sort & Filter Options:</strong> Use the available buttons
+              to sort by name or position, or filter by role to narrow down the
+              list and focus on specific groups.
+            </p>
+
+            <p>
+              This streamlined staff page is designed to help managers
+              efficiently manage staff information, keep records organized, and
+              access key details at a glance.
+            </p>
+          </div>
         </section>
         <!-- Edit Staff Details Modal -->
-        <div id="edit-modal" class="modal hidden" role="dialog" aria-modal="true">
+        <div
+          id="edit-modal"
+          class="modal hidden"
+          role="dialog"
+          aria-modal="true"
+        >
           <div class="modal-content">
             <h2>Edit Staff</h2>
             <form id="edit-form">
