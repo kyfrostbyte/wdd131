@@ -188,7 +188,9 @@ function filterStaffByPosition(list, position) {
 function searchStaff(list, query) {
   return query
     ? list.filter((s) =>
-        Object.values(s).some((val) => val.toLowerCase().includes(query))
+        Object.values(s).some((val) =>
+          String(val).toLowerCase().includes(query)
+        )
       )
     : list;
 }
