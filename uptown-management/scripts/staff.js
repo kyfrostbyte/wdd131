@@ -102,20 +102,16 @@ renderStaff();
 
 
 // Edit Staff Modal Logic
-// Modal DOM elements
 const editModal = document.getElementById("edit-modal");
 const editForm = document.getElementById("edit-form");
 const cancelButton = document.getElementById("edit-cancel");
 
-// Input fields
 const editId = document.getElementById("edit-id");
 const editFirst = document.getElementById("edit-first");
 const editLast = document.getElementById("edit-last");
 const editPosition = document.getElementById("edit-position");
 const editEmail = document.getElementById("edit-email");
 const editPhone = document.getElementById("edit-phone");
-
-// --- Utility Functions ---
 
 function openEditModal(staffMember) {
   editId.value = staffMember.id;
