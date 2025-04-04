@@ -97,6 +97,12 @@ export function createHelpSlideshow(slides) {
   return { open };
 }
 
+export function setupHelpSlideshow(todoSlides, elementId) {
+  const todoHelpModal = createHelpSlideshow(todoSlides);
+  document.getElementById(elementId).addEventListener("click", () => {
+    todoHelpModal.open();
+  });
+}
 
 // Tasks Templates
 

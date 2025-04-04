@@ -45,19 +45,21 @@
           <img src="assets/images/logo_no_text.png" alt="Logo" />
           <h1>Staff Directory</h1>
         </div>
-
-        <div class="controls-container">
-          <input type="text" id="staff-search" placeholder="Search staff..." />
-          <select id="filter-position">
-            <option value="">All Positions</option>
-            <!-- dynamically populated -->
-          </select>
-          <select id="sort-by">
-            <option value="">Sort by</option>
-            <option value="name">Name</option>
-            <option value="position">Position</option>
-          </select>
+        <div id="table-header-content">
+          <span id="position-help-btn" class="material-symbols-outlined help-icon" title="Help">help</span>
+          <div class="controls-container">
+            <input type="text" id="staff-search" placeholder="Search staff..." />
+            <select id="filter-position">
+              <option value="">All Positions</option>
+            </select>
+            <select id="sort-by">
+              <option value="">Sort by</option>
+              <option value="name">Name</option>
+              <option value="position">Position</option>
+            </select>
+          </div>
         </div>
+        
 
         <table class="staff-table">
           <thead>
@@ -134,7 +136,7 @@
                 <input type="tel" id="edit-phone" required />
               </label>
               <div class="modal-buttons">
-                <button type="submit">Save</button>
+                <button id="save-button" type="submit">Save</button>
                 <button type="button" id="edit-cancel">Cancel</button>
               </div>
             </form>

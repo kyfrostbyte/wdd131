@@ -1,4 +1,5 @@
 // main.js
+
 import { renderSidebar } from "./templates.js";
 
 document.addEventListener("DOMContentLoaded", () => {
