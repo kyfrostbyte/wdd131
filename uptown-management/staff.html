@@ -1,63 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- prettier-ignore-start -->
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Mooli&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- Meta -->
+    <link href="https://fonts.googleapis.com/css2?family=Mooli&display=swap" rel="stylesheet" />
+    
+    <!-- Social Media Meta Elements -->
     <meta property="og:title" content="Uptown Management Tools" />
     <meta property="og:type" content="website" />
-    <meta
-      property="og:description"
-      content="A tool for managing staff, schedules, tasks, and customers."
-    />
-    <meta
-      property="og:image"
-      content="https://kyfrostbyte.github.io/wdd131/uptown-management/assets/images/logo_with_slogan.png"
-    />
-    <meta property="og:image:alt" content="Logo with wrench and Uptown text" />
-    <meta
-      property="og:url"
-      content="https://kyfrostbyte.github.io/wdd131/uptown-management/index.html"
-    />
+    <meta property="og:description" content="A tool for managing staff, schedules, tasks, and customers." />
+    <meta property="og:image" content="https://kyfrostbyte.github.io/wdd131/uptown-management/assets/images/logo_with_slogan.png" />
+    <meta property="og:image:alt" content="A hand holding a wrench surrounding by a gear with the words Uptown Management Tools underneath." />
+    <meta property="og:url" content="https://kyfrostbyte.github.io/wdd131/uptown-management/index.html" />
     <meta name="twitter:card" content="summary_large_image" />
-
+    
+    <!-- Standard Head Elements -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="A tool for managing staff, schedules, tasks, and customers."
-    />
+    <meta name="description" content="A tool for managing staff, schedules, tasks, and customers." />
     <meta name="author" content="Aaron Alexander" />
     <link rel="icon" type="image/png" href="assets/images/favicon.ico" />
     <title>Uptown Staff Management</title>
-
-    <!-- Stylesheets -->
+  
+    <!-- Stylesheet and JavaScript Links -->
     <link rel="stylesheet" href="styles/staff.css" />
     <link rel="stylesheet" href="styles/main.css" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
-    />
-
-    <!-- Scripts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
     <script src="scripts/main.js" type="module" defer></script>
     <script src="scripts/staff.js" type="module" defer></script>
     <script src="scripts/templates.js" type="module" defer></script>
-    <!-- prettier-ignore-end -->
   </head>
   <body>
     <div class="content-wrapper">
       <header class="top-banner">
         <img src="assets/images/logo_no_text.png" alt="Uptown Logo" />
       </header>
-
       <main class="main-content">
         <div class="page-title">
           <img src="assets/images/logo_no_text.png" alt="Logo" />
@@ -70,15 +48,20 @@
             title="Help"
             >help</span
           >
-          <div class="controls-container">
+          <div class="controls-container" role="search" aria-label="Staff search and filters">
+            <label for="staff-search" class="visually-hidden">Search staff</label>
             <input
               type="text"
               id="staff-search"
               placeholder="Search staff..."
             />
+          
+            <label for="filter-position" class="visually-hidden">Filter by position</label>
             <select id="filter-position">
               <option value="">All Positions</option>
             </select>
+          
+            <label for="sort-by" class="visually-hidden">Sort staff</label>
             <select id="sort-by">
               <option value="">Sort by</option>
               <option value="name">Name</option>

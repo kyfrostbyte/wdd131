@@ -1,156 +1,33 @@
 // staff.js
+
 import { staffRowTemplate, setupHelpSlideshow } from "./templates.js";
 
 const defaultStaff = [
-  {
-    id: 1,
-    first: "John",
-    last: "Doe",
-    position: "Manager",
-    phone: "555-123-4567",
-    email: "john.doe@email.com",
-  },
-  {
-    id: 2,
-    first: "Jane",
-    last: "Smith",
-    position: "Clerk",
-    phone: "555-234-5678",
-    email: "jane.smith@email.com",
-  },
-  {
-    id: 3,
-    first: "Mike",
-    last: "Brown",
-    position: "Janitor",
-    phone: "555-345-6789",
-    email: "mike.brown@email.com",
-  },
-  {
-    id: 4,
-    first: "Anna",
-    last: "Lee",
-    position: "Salesperson",
-    phone: "555-456-7890",
-    email: "anna.lee@email.com",
-  },
-  {
-    id: 5,
-    first: "David",
-    last: "Kim",
-    position: "Manager",
-    phone: "555-567-8901",
-    email: "david.kim@email.com",
-  },
-  {
-    id: 6,
-    first: "Sara",
-    last: "Johnson",
-    position: "Clerk",
-    phone: "555-678-9012",
-    email: "sara.johnson@email.com",
-  },
-  {
-    id: 7,
-    first: "Chris",
-    last: "Davis",
-    position: "Salesperson",
-    phone: "555-789-0123",
-    email: "chris.davis@email.com",
-  },
-  {
-    id: 8,
-    first: "Laura",
-    last: "Wilson",
-    position: "Janitor",
-    phone: "555-890-1234",
-    email: "laura.wilson@email.com",
-  },
-  {
-    id: 9,
-    first: "Mark",
-    last: "Taylor",
-    position: "Salesperson",
-    phone: "555-901-2345",
-    email: "mark.taylor@email.com",
-  },
-  {
-    id: 10,
-    first: "Emily",
-    last: "Moore",
-    position: "Clerk",
-    phone: "555-012-3456",
-    email: "emily.moore@email.com",
-  },
-  {
-    id: 11,
-    first: "Paul",
-    last: "Clark",
-    position: "Manager",
-    phone: "555-345-9876",
-    email: "paul.clark@email.com",
-  },
-  {
-    id: 12,
-    first: "Amy",
-    last: "Hall",
-    position: "Salesperson",
-    phone: "555-456-8765",
-    email: "amy.hall@email.com",
-  },
-  {
-    id: 13,
-    first: "Steve",
-    last: "Young",
-    position: "Janitor",
-    phone: "555-567-7654",
-    email: "steve.young@email.com",
-  },
-  {
-    id: 14,
-    first: "Rachel",
-    last: "Allen",
-    position: "Clerk",
-    phone: "555-678-6543",
-    email: "rachel.allen@email.com",
-  },
-  {
-    id: 15,
-    first: "Luke",
-    last: "King",
-    position: "Salesperson",
-    phone: "555-789-5432",
-    email: "luke.king@email.com",
-  },
+  { id: 1, first: "John", last: "Doe", position: "Manager", phone: "555-123-4567", email: "john.doe@email.com" },
+  { id: 2, first: "Jane", last: "Smith", position: "Clerk", phone: "555-234-5678", email: "jane.smith@email.com" },
+  { id: 3, first: "Mike", last: "Brown", position: "Janitor", phone: "555-345-6789", email: "mike.brown@email.com" },
+  { id: 4, first: "Anna", last: "Lee", position: "Salesperson", phone: "555-456-7890", email: "anna.lee@email.com" },
+  { id: 5, first: "David", last: "Kim", position: "Manager", phone: "555-567-8901", email: "david.kim@email.com" },
+  { id: 6, first: "Sara", last: "Johnson", position: "Clerk", phone: "555-678-9012", email: "sara.johnson@email.com" },
+  { id: 7, first: "Chris", last: "Davis", position: "Salesperson", phone: "555-789-0123", email: "chris.davis@email.com" },
+  { id: 8, first: "Laura", last: "Wilson", position: "Janitor", phone: "555-890-1234", email: "laura.wilson@email.com" },
+  { id: 9, first: "Mark", last: "Taylor", position: "Salesperson", phone: "555-901-2345", email: "mark.taylor@email.com" },
+  { id: 10, first: "Emily", last: "Moore", position: "Clerk", phone: "555-012-3456", email: "emily.moore@email.com" },
+  { id: 11, first: "Paul", last: "Clark", position: "Manager", phone: "555-345-9876", email: "paul.clark@email.com" },
+  { id: 12, first: "Amy", last: "Hall", position: "Salesperson", phone: "555-456-8765", email: "amy.hall@email.com" },
+  { id: 13, first: "Steve", last: "Young", position: "Janitor", phone: "555-567-7654", email: "steve.young@email.com" },
+  { id: 14, first: "Rachel", last: "Allen", position: "Clerk", phone: "555-678-6543", email: "rachel.allen@email.com" },
+  { id: 15, first: "Luke", last: "King", position: "Salesperson", phone: "555-789-5432", email: "luke.king@email.com" }
 ];
 
 const staffSlides = [
-  {
-    img: "assets/images/slideshow/staff/slide1_fulltable.webp",
-    text: "The staff directory displays information about all current staff members including name, email, phone and position.",
-    alt: "Screenshot of the full staff table",
-  },
-  {
-    img: "assets/images/slideshow/staff/slide2_filters.webp",
-    text: "Use the search bar to find staff by name or details, and filter or sort the table by position to quickly narrow down your view.",
-    alt: "Table with arrows pointing to search, filter, and sort controls",
-  },
-  {
-    img: "assets/images/slideshow/staff/slide3_editbutton.webp",
-    text: "Click the three-dot edit icon next to any staff member to open their profile where you can update their information.",
-    alt: "Edit icon highlighted with a red arrow",
-  },
-  {
-    img: "assets/images/slideshow/staff/slide4_editmodal.webp",
-    text: "The edit modal allows you to modify the staff member's name, position, email, or phone number.",
-    alt: "Edit modal with a highlighted input field",
-  },
-  {
-    img: "assets/images/slideshow/staff/slide5_saveedit.webp",
-    text: "After making changes, click the save button to update the staff record. Your changes will be immediately reflected in the table.",
-    alt: "Edit modal with a red arrow pointing at the save button",
-  },
+  { img: "assets/images/slideshow/staff/slide1_fulltable.webp", text: "The staff directory displays information about all current staff members including name, email, phone and position.", alt: "Screenshot of the full staff table" },
+  { img: "assets/images/slideshow/staff/slide2_filters.webp", text: "Use the search bar to find staff by name or details, and filter or sort the table by position to quickly narrow down your view.", alt: "Table with arrows pointing to search, filter, and sort controls" },
+  { img: "assets/images/slideshow/staff/slide3_editbutton.webp", text: "Click the three-dot edit icon next to any staff member to open their profile where you can update their information.", alt: "Edit icon highlighted with a red arrow" },
+  { img: "assets/images/slideshow/staff/slide4_editmodal.webp", text: "The edit modal allows you to modify the staff member's name, position, email, or phone number.", alt: "Edit modal with a highlighted input field" },
+  { img: "assets/images/slideshow/staff/slide5_saveedit.webp", text: "After making changes, click the save button to update the staff record. Your changes will be immediately reflected in the table.", alt: "Edit modal with a red arrow pointing at the save button" }
 ];
+
 
 document.addEventListener("DOMContentLoaded", () => {
   setupHelpSlideshow(staffSlides, "position-help-btn");

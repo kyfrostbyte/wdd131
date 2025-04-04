@@ -1,5 +1,12 @@
 /* staff.css */
 
+body {
+  font-family: "Mooli", Arial, sans-serif;
+  font-display: swap;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
 /* Search bar, filter and sort styles */
 .controls-container {
   display: flex;
@@ -48,6 +55,8 @@
 
 /* Staff Table Styles*/
 .staff-table {
+  table-layout: fixed;
+  min-height: 600px;
   width: 100%;
   border-collapse: collapse;
   margin-bottom: 2rem;
