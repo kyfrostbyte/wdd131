@@ -1,6 +1,7 @@
 // staff.js
 
-import { staffRowTemplate, setupHelpSlideshow } from "./templates.js";
+import { staffRowTemplate } from "./templates.js";
+import { setupHelpSlideshow, setupHelpToggle } from "./main.js";
 
 const defaultStaff = [
   { id: 1, first: "John", last: "Doe", position: "Manager", phone: "555-123-4567", email: "john.doe@email.com" },
@@ -28,10 +29,12 @@ const staffSlides = [
   { img: "assets/images/slideshow/staff/slide5_saveedit.webp", text: "After making changes, click the save button to update the staff record. Your changes will be immediately reflected in the table.", alt: "Edit modal with a red arrow pointing at the save button" }
 ];
 
-
-document.addEventListener("DOMContentLoaded", () => {
+function init() {
   setupHelpSlideshow(staffSlides, "position-help-btn");
-});
+  setupHelpToggle();
+  renderStaff();
+}
+document.addEventListener("DOMContentLoaded", init);
 
 // Initialize staff list from localStorage or default
 let staff = JSON.parse(localStorage.getItem("staff")) || defaultStaff;
@@ -100,21 +103,6 @@ function updateStaffView() {
 searchInput.addEventListener("input", updateStaffView);
 filterSelect.addEventListener("change", updateStaffView);
 sortSelect.addEventListener("change", updateStaffView);
-
-// Help Section Toggle
-const helpToggleBtn = document.querySelector(".help-toggle");
-const helpContent = document.querySelector(".help-content");
-
-if (helpToggleBtn && helpContent) {
-  helpToggleBtn.addEventListener("click", () => {
-    const isExpanded = helpToggleBtn.getAttribute("aria-expanded") === "true";
-    helpToggleBtn.setAttribute("aria-expanded", String(!isExpanded));
-    helpContent.classList.toggle("open");
-  });
-}
-
-// Initial render
-renderStaff();
 
 // Edit Staff Modal Logic
 const editModal = document.getElementById("edit-modal");

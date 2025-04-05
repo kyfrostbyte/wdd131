@@ -1,13 +1,7 @@
 // index.js
 
-import {
-  renderTasks,
-  addTask,
-  getTasks,
-  openAddTaskModal,
-  closeAddTaskModal,
-} from "./todo.js";
-import { setupHelpSlideshow } from "./templates.js";
+import { renderTasks, addTask, getTasks, openAddTaskModal, closeAddTaskModal, } from "./todo.js";
+import { setupHelpSlideshow, setupHelpToggle } from "./main.js";
 
 const todoSlides = [
   { img: "assets/images/slideshow/dashboard/slide1_addtaskbutton.webp", text: "Click '+ Add Task' to create a new task.", alt: "Add Task button screenshot" },
@@ -17,31 +11,33 @@ const todoSlides = [
   { img: "assets/images/slideshow/dashboard/slide5_sneakpeak.webp", text: "The sneak peak boxes will automatically show updated statistics!", alt: "Sneak peek statistics box" }
 ];
 
-document.addEventListener("DOMContentLoaded", () => {
+// Initial Page Setup
+function init() {
   setupAddTaskModal();
   setupHelpToggle();
   setupHelpSlideshow(todoSlides, "todo-help-btn");
   document.addEventListener("tasks-updated", updateSneakPeekBoxes);
   renderTasks();
   updateSneakPeekBoxes();
-});
+}
+
+document.addEventListener("DOMContentLoaded", init);
 
 function setupAddTaskModal() {
-  const modal = document.getElementById("task-modal");
-  const openBtn = document.getElementById("open-task-modal");
-  const cancelBtn = document.getElementById("cancel-task");
-  const saveBtn = document.getElementById("save-task");
+  const openButton = document.getElementById("open-task-modal");
+  const cancelButton = document.getElementById("cancel-task");
+  const saveButton = document.getElementById("save-task");
   const input = document.getElementById("new-task");
 
-  openBtn?.addEventListener("click", () => {
+  openButton?.addEventListener("click", () => {
     openAddTaskModal();
   });
 
-  cancelBtn?.addEventListener("click", () => {
+  cancelButton?.addEventListener("click", () => {
     closeAddTaskModal();
   });
 
-  saveBtn?.addEventListener("click", () => {
+  saveButton?.addEventListener("click", () => {
     addTask();
   });
 
@@ -59,15 +55,5 @@ function updateSneakPeekBoxes() {
   document.getElementById("unfinished-count").textContent = unfinished;
 }
 
-function setupHelpToggle() {
-  const helpToggleBtn = document.querySelector(".help-toggle");
-  const helpContent = document.querySelector(".help-content");
 
-  if (helpToggleBtn && helpContent) {
-    helpToggleBtn.addEventListener("click", () => {
-      const isExpanded = helpToggleBtn.getAttribute("aria-expanded") === "true";
-      helpToggleBtn.setAttribute("aria-expanded", String(!isExpanded));
-      helpContent.classList.toggle("open");
-    });
-  }
-}
+

@@ -1,7 +1,7 @@
 // templates.js
 
-// Sidebar/Nav Functions
-export const sidebarTemplate = `
+export function sidebarTemplate(){
+  return `
   <div id="sidebar-spacer"></div>
   <div class="sidebar collapsed">
     <button class="toggle-btn">
@@ -28,19 +28,19 @@ export const sidebarTemplate = `
     </nav>
   </div>
 `;
-
-export function renderSidebar(target = document.body) {
-  const wrapper = document.createElement("div");
-  wrapper.innerHTML = sidebarTemplate;
-  const sidebarElements = Array.from(wrapper.children);
-  sidebarElements.forEach((el) => target.insertBefore(el, target.firstChild));
 }
 
-// Slideshow Modal Functions
-function createSlideshowTemplate() {
-  const modal = document.createElement("div");
-  modal.classList.add("help-slideshow-modal");
-  modal.innerHTML = `
+export function footerTemplate() {
+  return `
+    <div class="site-footer">
+      <p>&copy; 2025 - Aaron Alexander - Rexburg, ID - WDD 131</p>
+      <a href="site-plan.html">Site Plan </a>
+    </div>
+  `;
+}
+
+export function slideshowTemplate() {
+  return `
     <div class="help-slideshow-content">
       <button class="help-slideshow-close">✕</button>
       <img src="" alt="" />
@@ -51,63 +51,8 @@ function createSlideshowTemplate() {
       </div>
     </div>
   `;
-  return modal;
+
 }
-
-function attachSlideshowEvents(modal, slides) {
-  const imageElement = modal.querySelector("img");
-  const textElement = modal.querySelector("p");
-  const closeButton = modal.querySelector(".help-slideshow-close");
-  const nextButton = modal.querySelector(".next-slide");
-  const previousButton = modal.querySelector(".prev-slide");
-
-  let current = 0;
-
-  const updateSlide = () => {
-    imageElement.src = slides[current].img;
-    imageElement.alt = slides[current].alt;
-    textElement.textContent = slides[current].text;
-  };
-
-  nextButton.addEventListener("click", () => {
-    current = (current + 1) % slides.length;
-    updateSlide();
-  });
-
-  previousButton.addEventListener("click", () => {
-    current = (current - 1 + slides.length) % slides.length;
-    updateSlide();
-  });
-
-  closeButton.addEventListener("click", () => {
-    modal.classList.remove("active");
-  });
-
-  return {
-    updateSlide,
-    open: () => {
-      current = 0;
-      updateSlide();
-      modal.classList.add("active");
-    },
-  };
-}
-
-export function createHelpSlideshow(slides) {
-  const modal = createSlideshowTemplate();
-  document.body.appendChild(modal);
-  const { open } = attachSlideshowEvents(modal, slides);
-  return { open };
-}
-
-export function setupHelpSlideshow(todoSlides, elementId) {
-  const todoHelpModal = createHelpSlideshow(todoSlides);
-  document.getElementById(elementId).addEventListener("click", () => {
-    todoHelpModal.open();
-  });
-}
-
-// Tasks Templates
 
 export function taskTemplate(taskList) {
   return `
@@ -133,7 +78,6 @@ export function taskTemplate(taskList) {
   `;
 }
 
-// Staff Templates
 export function staffRowTemplate(staff) {
   return `
     <tr data-id="${staff.id}">

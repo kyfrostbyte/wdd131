@@ -1,5 +1,5 @@
-/* Sneak Peak Box Styles */
-.sneak-peak-container {
+/* Sneak Peek Box Styles */
+.sneak-peek-container {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 200px));
   justify-content: center;
@@ -9,7 +9,7 @@
   box-sizing: border-box;
 }
 
-.sneak-peak-box {
+.sneak-peek-box {
   aspect-ratio: 1 / 1;
   width: 100%;
   border: 2px solid var(--primary-color);
@@ -75,7 +75,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: var(--paragraph-font);
-  height: 400px;
+  height: 450px;
   overflow: hidden;
 }
 
@@ -99,8 +99,20 @@
 }
 
 .schedule-placeholder .placeholder-text {
+  text-align: start;
   color: #555;
   margin-bottom: 1rem;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.schedule-placeholder ul {
+  padding-left: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.schedule-placeholder ul li {
+  margin-bottom: 0.5rem;
 }
 
 /* Todo List Styles */
@@ -249,7 +261,7 @@
 /* On wider screens, show 4 sneak peak boxes per row */
 /* 💻 Layout switches to 1 row of 4 boxes on larger screens */
 @media (min-width: 750px) {
-  .sneak-peak-container {
+  .sneak-peek-container {
     grid-template-columns: repeat(4, minmax(0, 230px));
   }
 }

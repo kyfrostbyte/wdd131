@@ -25,7 +25,12 @@
   --nav-hover-background-color: var(--secondary-color);
 }
 
+html {
+  height: 100%;
+}
+
 body {
+  height: 100%;
   margin: 0;
   display: flex;
   font-family: Arial, sans-serif;
@@ -34,12 +39,12 @@ body {
 
 /* Sidebar Nav Menu*/
 .sidebar {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 10;
   width: 170px;
-  height: 100vh;
+  height: 100%;
   background-color: var(--nav-background-color);
   transition: width 0.3s ease;
   overflow: hidden;
@@ -73,10 +78,12 @@ body {
 }
 
 .toggle-btn .material-symbols-outlined {
-  font-size: 24px;
-  margin-right: 1rem;
+  font-size: 20px;
 }
 
+.nav-item .label, .toggle-btn .label {
+  margin-left: 1rem;
+}
 .nav-items {
   display: flex;
   flex-direction: column;
@@ -104,7 +111,8 @@ body {
   display: none;
 }
 
-/* Spacer to stop layout shift when sidebar is expanded */
+/* Sidebar is position: fixed
+   Spacer to keep content from going behind collapsed sidebar */
 #sidebar-spacer {
   width: 55px;
 }
@@ -121,22 +129,24 @@ body {
   clip: rect(1px, 1px, 1px, 1px);
   white-space: nowrap;
 }
+
 .content-wrapper {
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
   flex: 1;
-  height: 100vh;
-  overflow: hidden;
 }
+
 
 /* Top banner and/or header thing */
 .top-banner {
   height: 56px;
   background-color: var(--primary-color);
+  border-bottom: 2px solid var(--accent1-color);
   color: white;
   display: flex;
   align-items: center;
-  padding: 0 1rem;
+  padding: 3px 1rem;
   justify-content: end;
 }
 
@@ -146,7 +156,6 @@ body {
 }
 
 /* Page Title and Image */
-
 .page-title {
   display: flex;
   flex-direction: row;
@@ -194,7 +203,7 @@ body {
 
 /* Main page content */
 .main-content {
-  flex: 1;
+  flex: 1 0 auto;
   padding: 2rem;
   background-color: #f5f5f5;
   overflow-y: auto;
@@ -203,7 +212,30 @@ body {
   box-sizing: border-box;
 }
 
-/* Help Section */
+/* Footer Styles */
+.site-footer {
+  flex-shrink: 0;
+  position: relative;
+  background-color: var(--primary-color);
+  color: var(--accent2-color);
+  font-family: var(--paragraph-font);
+  text-align: center;
+  font-size: 1rem;
+  border-top: 2px solid var(--accent1-color);
+  padding-bottom: 5px;
+}
+
+.site-footer a {
+  margin: 0.5rem;
+  color: var(--accent2-color);
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  color: var(--accent1-color);
+}
+
+/* Expandable Help Section */
 .help-container {
   border: 2px solid var(--primary-color);
   border-radius: 12px;

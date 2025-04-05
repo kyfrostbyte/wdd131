@@ -1,6 +1,7 @@
 // todo.js
 
 import { taskTemplate } from "./templates.js";
+
 const initialTasks = [
   { id: 1, text: "Finish next weeks schedule", completed: false },
   { id: 2, text: "Approve time cards", completed: false },
