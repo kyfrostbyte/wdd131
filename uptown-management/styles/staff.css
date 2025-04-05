@@ -45,18 +45,22 @@ body {
   grid-column: 2 / 3;
 }
 
-#table-header-content .material-symbols-outlined {
-  cursor: pointer;
+#table-header-content .slideshow-icon {
   align-self: end;
-  color: var(--primary-color);
   font-size: 2rem;
-  padding-bottom: 5px;
+  padding-bottom: 15px;
+  color: var(--primary-color);
+}
+
+#table-header-content .slideshow-icon:hover {
+  color: var(--accent1-color)
 }
 
 /* Staff Table Styles*/
 .staff-table {
-  table-layout: fixed;
-  min-height: 600px;
+  table-layout: auto;
+  min-height: 660px;
+  min-width: 384px;
   width: 100%;
   border-collapse: collapse;
   margin-bottom: 2rem;
@@ -84,25 +88,45 @@ body {
   align-items: center;
 }
 
-.edit-icon {
-  cursor: pointer;
+.staff-table td {
+  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
 }
+
+/* Restrict Edit Column Width */
+.staff-table th:last-child,
+.staff-table td:last-child {
+  width: 50px; 
+  max-width: 50px;
+  padding: 0.25rem; 
+}
+
+.edit-icon {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.25rem;
+  padding: 0;
+  line-height: 1;
+  vertical-align: middle;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.edit-icon:hover{
+  color: var(--accent1-color);
+}
+
 
 /* Hide email and phone columns on smaller screens */
 .staff-table td:nth-child(4),
 .staff-table th:nth-child(4),
 .staff-table td:nth-child(5),
-.staff-table th:nth-child(5),
-.staff-table td:nth-child(6),
-.staff-table th:nth-child(6) {
+.staff-table th:nth-child(5) {
   display: none;
-}
-
-#table-header-content,
-.staff-table {
-  width: clamp(90%, 80vw, 100%);
-  margin: 0 auto;
-  transition: width 0.3s ease;
 }
 
 /*  Modal Styles  */
@@ -228,19 +252,8 @@ body {
   padding: 1.5rem;
 }
 
-/* Show all columns on wider screens */
-@media (min-width: 1000px) {
-  .staff-table td:nth-child(4),
-  .staff-table th:nth-child(4),
-  .staff-table td:nth-child(5),
-  .staff-table th:nth-child(5),
-  .staff-table td:nth-child(6),
-  .staff-table th:nth-child(6) {
-    display: table-cell;
-  }
-}
 
-/* On wider screens, display controls in a single row */
+/* When wide enough, display controls in a single row */
 @media (min-width: 631px) {
   .controls-container {
     display: flex;
@@ -251,3 +264,23 @@ body {
     margin-bottom: 0.5rem;
   }
 }
+
+/* When wide enough show all columns */
+@media (min-width: 1000px) {
+  .staff-table td:nth-child(4),
+  .staff-table th:nth-child(4),
+  .staff-table td:nth-child(5),
+  .staff-table th:nth-child(5) {
+    display: table-cell;
+  }
+}
+
+/* Restrict tables width */
+@media (min-width: 1500px) {
+  .staff-table, #table-header-content {
+    max-width: 1365px;
+    margin: 0 auto;
+  }
+}
+
+

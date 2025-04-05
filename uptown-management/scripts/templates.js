@@ -8,7 +8,7 @@ export function sidebarTemplate(){
       <span class="material-symbols-outlined">menu</span>
       <span class="label">Uptown</span>
     </button>
-    <nav class="nav-items">
+    <nav class="nav-items" aria-label="Main navigation">
       <a href="index.html" class="nav-item">
         <span class="material-symbols-outlined">home</span>
         <span class="label">Dashboard</span>
@@ -32,44 +32,76 @@ export function sidebarTemplate(){
 
 export function footerTemplate() {
   return `
-    <div class="site-footer">
       <p>&copy; 2025 - Aaron Alexander - Rexburg, ID - WDD 131</p>
       <a href="site-plan.html">Site Plan </a>
-    </div>
   `;
 }
 
 export function slideshowTemplate() {
   return `
-    <div class="help-slideshow-content">
-      <button class="help-slideshow-close">✕</button>
+    <div 
+      class="help-slideshow-content" 
+      role="dialog" 
+      aria-modal="true" 
+      aria-labelledby="slideshow-title"
+    >
+      <h2 id="slideshow-title" class="visually-hidden">Task Help Slideshow</h2>
+
+      <button 
+        class="help-slideshow-close" 
+        aria-label="Close help slideshow"
+      >
+        ✕
+      </button>
+
       <img src="" alt="" />
-      <p></p>
+
+      <p aria-live="polite"></p>
+
       <div class="help-slideshow-controls">
-        <button class="prev-slide">Prev</button>
-        <button class="next-slide">Next</button>
+        <button class="prev-slide" aria-label="Previous slide">Prev</button>
+        <button class="next-slide" aria-label="Next slide">Next</button>
       </div>
     </div>
   `;
-
 }
+
 
 export function taskTemplate(taskList) {
   return `
-    <ul>
+    <ul aria-label="To-Do Task List">
       ${taskList
         .map(
           (task) => `
         <li class="todo-item">
-          <input type="checkbox" id="task-${task.id}" ${
-            task.completed ? "checked" : ""
-          }>
-          <label for="task-${task.id}" class="todo-label ${
-            task.completed ? "checked" : ""
-          }">${task.text}</label>
+          <input 
+            type="checkbox" 
+            id="task-${task.id}" 
+            ${task.completed ? "checked" : ""}
+            aria-describedby="label-task-${task.id}"
+          >
+          <label 
+            for="task-${task.id}" 
+            id="label-task-${task.id}" 
+            class="todo-label ${task.completed ? "checked" : ""}"
+          >
+            ${task.text}
+          </label>
           <div class="todo-actions">
-            <button data-edit-id="${task.id}">✏️</button>
-            <button data-delete-id="${task.id}">🗑️</button>
+            <button 
+              type="button" 
+              data-edit-id="${task.id}" 
+              aria-label="Edit task: ${task.text}"
+            >
+              ✏️
+            </button>
+            <button 
+              type="button" 
+              data-delete-id="${task.id}" 
+              aria-label="Delete task: ${task.text}"
+            >
+              🗑️
+            </button>
           </div>
         </li>`
         )
@@ -77,6 +109,7 @@ export function taskTemplate(taskList) {
     </ul>
   `;
 }
+
 
 export function staffRowTemplate(staff) {
   return `
@@ -86,7 +119,15 @@ export function staffRowTemplate(staff) {
       <td>${staff.position}</td>
       <td>${staff.email}</td>
       <td>${staff.phone}</td>
-      <td><span class="material-symbols-outlined edit-icon">more_horiz</span></td>
+      <td>
+        <button 
+          type="button" 
+          class="edit-icon material-symbols-outlined" 
+          aria-label="Edit ${staff.first} ${staff.last}'s information"
+        >
+          more_horiz
+        </button>
+      </td>
     </tr>
   `;
 }

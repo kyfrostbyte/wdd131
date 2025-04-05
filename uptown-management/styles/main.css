@@ -103,10 +103,17 @@ body {
   color: var(--nav-hover-link-color);
 }
 
-.material-symbols-outlined {
+.slideshow-icon {
+  cursor: pointer;
   font-size: 24px;
+  width: 24px;
+  height: 24px;
+  display: inline-block;
 }
 
+.slideshow-icon:hover {
+  color: var(--accent1-color);
+}
 .sidebar.collapsed .label {
   display: none;
 }
@@ -213,7 +220,7 @@ body {
 }
 
 /* Footer Styles */
-.site-footer {
+footer {
   flex-shrink: 0;
   position: relative;
   background-color: var(--primary-color);
@@ -225,13 +232,13 @@ body {
   padding-bottom: 5px;
 }
 
-.site-footer a {
+footer a {
   margin: 0.5rem;
   color: var(--accent2-color);
   text-decoration: none;
 }
 
-.site-footer a:hover {
+footer a:hover {
   color: var(--accent1-color);
 }
 
@@ -336,6 +343,11 @@ body {
   border-radius: 6px;
   font-size: 0.9rem;
   cursor: pointer;
+}
+
+.help-slideshow-controls button:hover,
+.help-slideshow-close:hover {
+  background-color: var(--accent1-color)
 }
 
 .help-slideshow-close {
