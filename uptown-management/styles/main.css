@@ -139,7 +139,6 @@ body {
   height: 1px;
   width: 1px;
   overflow: hidden;
-  clip-path: inset(0 0 0 0);
   white-space: nowrap;
 }
 
