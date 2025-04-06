@@ -29,10 +29,10 @@ const staffSlides = [
   { img: "assets/images/slideshow/staff/slide5_saveedit.webp", text: "After making changes, click the save button to update the staff record. Your changes will be immediately reflected in the table.", alt: "Edit modal with a red arrow pointing at the save button" }
 ];
 
-
 function init() {
   setupHelpSlideshow(staffSlides, "position-help-btn");
   setupHelpToggle();
+  populatePositionFilter();
   renderStaff();
 }
 document.addEventListener("DOMContentLoaded", init);
@@ -46,14 +46,18 @@ const searchInput = document.getElementById("staff-search");
 const filterSelect = document.getElementById("filter-position");
 const sortSelect = document.getElementById("sort-by");
 
-// Populate filter dropdown with unique positions
-const positions = [...new Set(staff.map((s) => s.position))];
-positions.forEach((pos) => {
-  const option = document.createElement("option");
-  option.value = pos;
-  option.textContent = pos;
-  filterSelect.appendChild(option);
-});
+// Populate position dropdown options
+function populatePositionFilter() {
+  filterSelect.innerHTML = '<option value="">All Positions</option>';
+
+  const positions = [...new Set(staff.map((s) => s.position))];
+  positions.forEach((pos) => {
+    const option = document.createElement("option");
+    option.value = pos;
+    option.textContent = pos;
+    filterSelect.appendChild(option);
+  });
+}
 
 // Render table rows
 function renderStaff(list = staff) {

@@ -77,23 +77,24 @@
             </select>
           </div>
         </div>
-        <table class="staff-table">
-          <thead>
-            <tr>
-              <th>First Name</th>
-              <th>Last Name</th>
-              <th>Position</th>
-              <th>Email</th>
-              <th>Phone</th>
-              <th>Edit</th>
-            </tr>
-          </thead>
-          <tbody id="staff-body">
-            <!-- Dynamic rows inserted here -->
-          </tbody>
-        </table>
-
-        <section class="help-container">
+        <div class="table-wrapper">
+          <table class="staff-table">
+            <thead>
+              <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Position</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Edit</th>
+              </tr>
+            </thead>
+            <tbody id="staff-body">
+              <!-- Dynamic rows inserted here -->
+            </tbody>
+          </table>
+        </div>
+        <aside class="help-container">
           <button class="help-toggle" aria-expanded="false">
             <span class="material-symbols-outlined">help</span>
             Staff Page Overview
@@ -138,7 +139,7 @@
               access key details at a glance.
             </p>
           </div>
-        </section>
+        </aside>
         <!-- Edit Staff Details Modal -->
         <div
           id="edit-modal"

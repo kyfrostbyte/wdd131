@@ -50,9 +50,12 @@
 }
 
 /* Staff Table Styles*/
+.table-wrapper {
+  min-height: 660px; /* This is to prevent large layout shifts when content is loaded*/
+}
+
 .staff-table {
   table-layout: fixed;
-  min-height: 660px;
   min-width: 384px;
   width: 100%;
   border-collapse: collapse;
@@ -60,6 +63,7 @@
   font-family: var(--paragraph-font);
   background-color: white;
 }
+
 .staff-table td:nth-child(4),
 .staff-table th:nth-child(4) {
   white-space: nowrap;
