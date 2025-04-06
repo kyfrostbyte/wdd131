@@ -1,35 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-          <!-- Fonts preload -->
-          <link rel="preconnect" href="https://fonts.googleapis.com" />
-          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-          <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-       
-          <!-- Social Media Meta Elements -->
-          <meta property="og:title" content="Uptown Management Tools" />
-          <meta property="og:type" content="website" />
-          <meta property="og:description" content="A tool for managing staff, schedules, tasks, and customers." />
-          <meta property="og:image" content="https://kyfrostbyte.github.io/wdd131/uptown-management/assets/images/logo_with_slogan.png" />
-          <meta property="og:image:alt" content="A hand holding a wrench surrounding by a gear with the words Uptown Management Tools underneath." />
-          <meta property="og:url" content="https://kyfrostbyte.github.io/wdd131/uptown-management/index.html" />
-          <meta name="twitter:card" content="summary_large_image" />
-          
-          <!-- Standard Head Elements -->
-          <meta charset="UTF-8" />
-          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-          <meta name="description" content="A tool for managing staff, schedules, tasks, and customers." />
-          <meta name="author" content="Aaron Alexander" />
-          <link rel="icon" type="image/png" href="assets/images/favicon.ico" />
-          <title>Uptown Staff Management</title>
-        
-          <!-- Stylesheet and JavaScript Links -->
-          <link rel="stylesheet" href="styles/staff.css" />
-          <link rel="stylesheet" href="styles/main.css" />
-          <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=swap">
-          <script src="scripts/main.js" type="module" defer></script>
-          <script src="scripts/staff.js" type="module" defer></script>
-          <script src="scripts/templates.js" type="module" defer></script>
+      <meta charset="UTF-8">
+
+      <!-- Fonts preload -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    
+      <!-- Social Media Meta Elements -->
+      <meta property="og:title" content="Uptown Management Tools">
+      <meta property="og:type" content="website">
+      <meta property="og:description" content="A tool for managing staff, schedules, tasks, and customers.">
+      <meta property="og:image" content="https://kyfrostbyte.github.io/wdd131/uptown-management/assets/images/logo_with_slogan.png">
+      <meta property="og:image:alt" content="A hand holding a wrench surrounding by a gear with the words Uptown Management Tools underneath.">
+      <meta property="og:url" content="https://kyfrostbyte.github.io/wdd131/uptown-management/index.html">
+      <meta name="twitter:card" content="summary_large_image">
+      
+      <!-- Standard Head Elements -->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="A tool for managing staff, schedules, tasks, and customers.">
+      <meta name="author" content="Aaron Alexander">
+      <link rel="icon" type="image/png" href="assets/images/favicon.ico">
+      <title>Uptown Staff Management</title>
+
+      <!-- Stylesheet and JavaScript Links -->
+      <link rel="stylesheet" href="styles/staff.css">
+      <link rel="stylesheet" href="styles/main.css">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=swap">
+      <script src="scripts/main.js" type="module"></script>
+      <script src="scripts/staff.js" type="module"></script>
+      <script src="scripts/templates.js" type="module"></script>
   </head>
   <body>
     <div class="content-wrapper">
@@ -60,7 +61,7 @@
               type="text"
               id="staff-search"
               placeholder="Search staff..."
-            />
+            >
 
             <label for="filter-position" class="visually-hidden"
               >Filter by position</label
@@ -150,26 +151,26 @@
           <div class="modal-content">
             <h2>Edit Staff</h2>
             <form id="edit-form">
-              <input type="hidden" id="edit-id" />
+              <input type="hidden" id="edit-id">
               <label>
                 First Name:
-                <input type="text" id="edit-first" required />
+                <input type="text" id="edit-first" required>
               </label>
               <label>
                 Last Name:
-                <input type="text" id="edit-last" required />
+                <input type="text" id="edit-last" required>
               </label>
               <label>
                 Position:
-                <input type="text" id="edit-position" required />
+                <input type="text" id="edit-position" required>
               </label>
               <label>
                 Email:
-                <input type="email" id="edit-email" required />
+                <input type="email" id="edit-email" required>
               </label>
               <label>
                 Phone:
-                <input type="tel" id="edit-phone" required />
+                <input type="tel" id="edit-phone" required>
               </label>
               <div class="modal-buttons">
                 <button id="save-button" type="submit">Save</button>
