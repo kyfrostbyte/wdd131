@@ -29,6 +29,7 @@ const staffSlides = [
   { img: "assets/images/slideshow/staff/slide5_saveedit.webp", text: "After making changes, click the save button to update the staff record. Your changes will be immediately reflected in the table.", alt: "Edit modal with a red arrow pointing at the save button" }
 ];
 
+
 function init() {
   setupHelpSlideshow(staffSlides, "position-help-btn");
   setupHelpToggle();
@@ -138,7 +139,9 @@ function getStaffFromRow(row) {
 
 function handleEditClick(event) {
   // Make sure its an edit icon
-  if (!event.target.classList.contains("edit-icon")) return;
+  const button = event.target.closest(".edit-icon");
+  if (!button) return;
+
   const row = event.target.closest("tr");
   const staffMember = getStaffFromRow(row);
   if (staffMember) openEditModal(staffMember);

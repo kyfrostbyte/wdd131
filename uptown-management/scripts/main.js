@@ -2,7 +2,7 @@
 
 import { sidebarTemplate, footerTemplate, slideshowTemplate } from "./templates.js";
 
-function init () {
+function init() {
   renderSidebar();
   renderFooter();
   setupSidebarToggle();
@@ -33,7 +33,7 @@ function renderSidebar(target = document.body) {
 
 // Footer functions
 function renderFooter() {
-  const footer = document.querySelector('footer');
+  const footer = document.querySelector("footer");
   if (!footer) return;
 
   footer.innerHTML = footerTemplate();
@@ -108,6 +108,3 @@ export function setupHelpToggle() {
     });
   }
 }
-
-
-

@@ -1,3 +1,5 @@
+/* index.css */
+
 /* Sneak Peek Box Styles */
 .sneak-peek-container {
   display: grid;
@@ -90,7 +92,6 @@
   padding: 2rem;
   text-align: center;
   border-radius: 1rem;
-  
 }
 
 .schedule-placeholder .placeholder-title {

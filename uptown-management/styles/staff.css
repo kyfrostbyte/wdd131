@@ -1,12 +1,5 @@
 /* staff.css */
 
-body {
-  font-family: "Mooli", Arial, sans-serif;
-  font-display: swap;
-  font-size: 16px;
-  line-height: 1.5;
-}
-
 /* Search bar, filter and sort styles */
 .controls-container {
   display: flex;
@@ -53,12 +46,12 @@ body {
 }
 
 #table-header-content .slideshow-icon:hover {
-  color: var(--accent1-color)
+  color: var(--accent1-color);
 }
 
 /* Staff Table Styles*/
 .staff-table {
-  table-layout: auto;
+  table-layout: fixed;
   min-height: 660px;
   min-width: 384px;
   width: 100%;
@@ -66,6 +59,12 @@ body {
   margin-bottom: 2rem;
   font-family: var(--paragraph-font);
   background-color: white;
+}
+.staff-table td:nth-child(4),
+.staff-table th:nth-child(4) {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .staff-table th,
@@ -98,16 +97,18 @@ body {
 /* Restrict Edit Column Width */
 .staff-table th:last-child,
 .staff-table td:last-child {
-  width: 50px; 
+  width: 50px;
   max-width: 50px;
-  padding: 0.25rem; 
+  padding: 0.25rem;
 }
 
 .edit-icon {
+  font-size: 24px;
+  width: 24px;
+  height: 24px;
   background: none;
   border: none;
   cursor: pointer;
-  font-size: 1.25rem;
   padding: 0;
   line-height: 1;
   vertical-align: middle;
@@ -116,10 +117,9 @@ body {
   justify-content: center;
 }
 
-.edit-icon:hover{
+.edit-icon:hover {
   color: var(--accent1-color);
 }
-
 
 /* Hide email and phone columns on smaller screens */
 .staff-table td:nth-child(4),
@@ -252,7 +252,6 @@ body {
   padding: 1.5rem;
 }
 
-
 /* When wide enough, display controls in a single row */
 @media (min-width: 631px) {
   .controls-container {
@@ -277,10 +276,9 @@ body {
 
 /* Restrict tables width */
 @media (min-width: 1500px) {
-  .staff-table, #table-header-content {
+  .staff-table,
+  #table-header-content {
     max-width: 1365px;
     margin: 0 auto;
   }
 }
-
-

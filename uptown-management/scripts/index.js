@@ -11,7 +11,6 @@ const todoSlides = [
   { img: "assets/images/slideshow/dashboard/slide5_sneakpeak.webp", text: "The sneak peak boxes will automatically show updated statistics!", alt: "Sneak peek statistics box" }
 ];
 
-// Initial Page Setup
 function init() {
   setupAddTaskModal();
   setupHelpToggle();
@@ -54,6 +53,3 @@ function updateSneakPeekBoxes() {
   document.getElementById("finished-count").textContent = finished;
   document.getElementById("unfinished-count").textContent = unfinished;
 }
-
-
-

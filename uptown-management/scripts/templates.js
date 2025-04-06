@@ -1,6 +1,6 @@
 // templates.js
 
-export function sidebarTemplate(){
+export function sidebarTemplate() {
   return `
   <div id="sidebar-spacer"></div>
   <div class="sidebar collapsed">
@@ -66,7 +66,6 @@ export function slideshowTemplate() {
   `;
 }
 
-
 export function taskTemplate(taskList) {
   return `
     <ul aria-label="To-Do Task List">
@@ -110,7 +109,6 @@ export function taskTemplate(taskList) {
   `;
 }
 
-
 export function staffRowTemplate(staff) {
   return `
     <tr data-id="${staff.id}">
@@ -122,10 +120,21 @@ export function staffRowTemplate(staff) {
       <td>
         <button 
           type="button" 
-          class="edit-icon material-symbols-outlined" 
+          class="edit-icon" 
           aria-label="Edit ${staff.first} ${staff.last}'s information"
         >
-          more_horiz
+          <svg 
+            xmlns="http://www.w3.org/2000/svg" 
+            viewBox="0 0 24 24" 
+            width="24" 
+            height="24" 
+            fill="currentColor" 
+            aria-hidden="true"
+            >
+            <circle cx="5" cy="12" r="2"/>
+            <circle cx="12" cy="12" r="2"/>
+            <circle cx="19" cy="12" r="2"/>
+          </svg>
         </button>
       </td>
     </tr>
