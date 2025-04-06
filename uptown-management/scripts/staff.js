@@ -35,6 +35,7 @@ function init() {
   populatePositionFilter();
   renderStaff();
 }
+
 document.addEventListener("DOMContentLoaded", init);
 
 // Initialize staff list from localStorage or default
