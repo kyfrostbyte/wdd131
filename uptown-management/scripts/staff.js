@@ -71,13 +71,15 @@ function filterStaffByPosition(list, position) {
 
 // Search by any field
 function searchStaff(list, query) {
-  return query
-    ? list.filter((s) =>
-        Object.values(s).some((val) =>
-          String(val).toLowerCase().includes(query)
-        )
-      )
-    : list;
+  if (!query) return list;
+
+  const regex = new RegExp(`\\b${query}`, 'i');
+
+  return list.filter((s) =>
+    Object.values(s).some((val) =>
+      regex.test(String(val))
+    )
+  );
 }
 
 // Sort by first name or position
